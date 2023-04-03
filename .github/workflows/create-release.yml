@@ -30,4 +30,4 @@ jobs:
           prerelease: false
           tag_name: release-${{ github.sha }}
           release_name: Release ${{ github.sha }}
-          files: ./target/wasm32-unknown-unknown/release/octopath_traveler_autosplitter_wasm.wasm
+          files: ./target/wasm32-unknown-unknown/release/octopath_traveler_2_autosplitter_wasm.wasm

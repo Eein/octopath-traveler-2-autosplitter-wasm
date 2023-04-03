@@ -98,7 +98,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "octopath-traveler-autosplitter-wasm"
+name = "octopath-traveler-2-autosplitter-wasm"
 version = "0.1.0"
 dependencies = [
  "asr",
