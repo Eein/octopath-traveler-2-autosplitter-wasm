@@ -2,13 +2,15 @@
 use spinning_top::{const_spinlock, Spinlock};
 use std::collections::HashSet;
 use std::fmt::{Display, Formatter, Result};
+use std::env;
 
 use bytemuck::Pod;
 
 use asr::{
     timer::{self, TimerState},
     watcher::Pair,
-    Address, Process
+    Address, Process,
+    get_os
 };
 
 // mod data;
@@ -128,7 +130,13 @@ pub struct Splits(HashSet<String>);
 pub extern "C" fn update() {
     let mut state = STATE.lock();
     if state.game.is_none() {
-        match Process::attach("Octopath_Traveler2") {
+        let os = get_os().unwrap();
+        let process_for_os = match os.as_str() {
+            "windows" => "Octopath_Traveler2",
+            "linux" => "Octopath_Travel",
+            _ => "Octopath_Traveler2"
+        };
+        match Process::attach(process_for_os) {
             Some(process) => {
                 match process.get_module_address("Octopath_Traveler2-Win64-Shipping.exe") {
                     Ok(Address(module)) => {
