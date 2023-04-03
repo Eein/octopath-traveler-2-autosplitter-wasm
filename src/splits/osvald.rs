@@ -6,10 +6,6 @@ impl OsvaldSplits {
         // checks if an old save is lingering, also make sure old zone id isn't 0 later
         if vars.osvald_progress.old != vars.osvald_progress.current {
             match vars.osvald_progress.current {
-                p if p == 0 => return vars.split("osvald_0", vars.settings.osvald_0),
-                p if p == 0 => return vars.split("osvald_0", vars.settings.osvald_0),
-                p if p == 0 => return vars.split("osvald_0", vars.settings.osvald_0),
-                p if p == 0 => return vars.split("osvald_0", vars.settings.osvald_0),
                 p if p == 10 => return vars.split("osvald_10", vars.settings.osvald_10),
                 p if p == 20 => return vars.split("osvald_20", vars.settings.osvald_20),
                 p if p == 30 => return vars.split("osvald_30", vars.settings.osvald_30),
