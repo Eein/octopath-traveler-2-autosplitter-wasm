@@ -3,17 +3,10 @@
 version = 3
 
 [[package]]
-name = "arrayvec"
-version = "0.7.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8da52d66c7071e2e3fa2a1e5c6d088fec47b593032b254f5e980de8ea54454d6"
-
-[[package]]
 name = "asr"
 version = "0.1.0"
 source = "git+https://github.com/CryZe/asr#4949bad1925169ce2382ff6378e56e6ece02b0c8"
 dependencies = [
- "arrayvec",
  "asr-derive",
  "bytemuck",
  "itoa",

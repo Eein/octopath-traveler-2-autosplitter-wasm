@@ -10,7 +10,6 @@ use settings::Settings;
 use bytemuck::Pod;
 
 use asr::{
-    get_os,
     timer::{self, TimerState},
     watcher::Pair,
     Address, Process,
@@ -174,17 +173,15 @@ impl Vars<'_> {
 
 pub struct Splits(HashSet<String>);
 
+#[cfg_attr(feature = "linux", path = "linux_process.rs")]
+#[cfg_attr(feature = "windows", path = "windows_process.rs")]
+mod os_process;
+
 #[no_mangle]
 pub extern "C" fn update() {
     let mut state = STATE.lock();
     if state.game.is_none() {
-        let os = get_os().unwrap();
-        let process_for_os = match os.as_str() {
-            "windows" => "Octopath_Traveler2",
-            "linux" => "Octopath_Travel",
-            _ => "Octopath_Traveler2",
-        };
-        match Process::attach(process_for_os) {
+        match Process::attach(&os_process::get_process_name()) {
             Some(process) => {
                 match process.get_module_address("Octopath_Traveler2-Win64-Shipping.exe") {
                     Ok(Address(module)) => {

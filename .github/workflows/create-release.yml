@@ -21,8 +21,14 @@ jobs:
           rust-version: 'stable' 
           targets: 'wasm32-unknown-unknown'
 
-      - name: Build Shared Library
-        run: cargo build --target wasm32-unknown-unknown --release
+      - name: Build Linux Shared Library
+        run: cargo build --target wasm32-unknown-unknown --release --features linux
+
+      - name: Move Linux
+        run: mv ./target/wasm32-unknown-unknown/release/octopath_traveler_2_autosplitter_wasm.wasm ./target/wasm32-unknown-unknown/release/octopath_traveler_2_autosplitter_linux_wasm.wasm 
+
+      - name: Build Regular Shared Library
+        run: cargo build --target wasm32-unknown-unknown --release 
 
       - name: Release
         uses: softprops/action-gh-release@v1
@@ -32,4 +38,6 @@ jobs:
           prerelease: false
           tag_name: release-${{ github.sha }}
           release_name: Release ${{ github.sha }}
-          files: ./target/wasm32-unknown-unknown/release/octopath_traveler_2_autosplitter_wasm.wasm
+          files: 
+            - ./target/wasm32-unknown-unknown/release/octopath_traveler_2_autosplitter_wasm.wasm
+            - ./target/wasm32-unknown-unknown/release/octopath_traveler_2_autosplitter_linux_wasm.wasm
