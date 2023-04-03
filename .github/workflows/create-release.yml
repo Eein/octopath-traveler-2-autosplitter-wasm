@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v2
+
+      - name: Install Rust
+        uses: hecrj/setup-rust-action@v1
+        with:
+          rust-version: 'stable' 
+          targets: 'wasm32-unknown-unknown'
+
+      - name: Build Shared Library
+        run: cargo build --target wasm32-unknown-unknown --release
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+          tag_name: release-${{ github.sha }}
+          release_name: Release ${{ github.sha }}
+          files: ./target/wasm32-unknown-unknown/release/octopath_traveler_autosplitter_wasm.wasm
