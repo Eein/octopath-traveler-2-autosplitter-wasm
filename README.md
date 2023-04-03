@@ -6,7 +6,7 @@ A Windows and Linux autosplitter for Octopath Traveler 2
 
 # TODO:
 
-- [-] Character Splits
+- [x] Character Splits
 - [ ] Ending splits
 - [ ] Character Joins
 - [ ] Enter/Exit Zone
