@@ -45,6 +45,13 @@ struct Game {
     module: u64,
     splits: HashSet<String>,
     game_state: Watcher<u8>,
+    hikari_progress: Watcher<u16>,
+    ochette_progress: Watcher<u16>,
+    castti_progress: Watcher<u16>,
+    partitio_progress: Watcher<u16>,
+    temenos_progress: Watcher<u16>,
+    osvald_progress: Watcher<u16>,
+    throne_progress: Watcher<u16>,
     agnea_progress: Watcher<u16>,
     settings: Settings,
     start: Watcher<u8>,
@@ -58,6 +65,13 @@ impl Game {
             start: Watcher::new(vec![0x5219628, 0xA8]),
             settings: Settings::register(),
             game_state: Watcher::new(vec![0x4F7AB68, 0x234]),
+            hikari_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x0 + 0xEC]),
+            ochette_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0xF0 + 0xEC]),
+            castti_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x1E0 + 0xEC]),
+            partitio_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x2D0 + 0xEC]),
+            temenos_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x3C0 + 0xEC]),
+            osvald_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x4B0 + 0xEC]),
+            throne_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x5A0 + 0xEC]),
             agnea_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x690 + 0xEC]),
             splits: HashSet::new(),
         };
@@ -68,6 +82,13 @@ impl Game {
         Some(Vars {
             start: self.start.update(&self.process, self.module)?,
             game_state: self.game_state.update(&self.process, self.module)?,
+            hikari_progress: self.hikari_progress.update(&self.process, self.module)?,
+            ochette_progress: self.ochette_progress.update(&self.process, self.module)?,
+            castti_progress: self.castti_progress.update(&self.process, self.module)?,
+            partitio_progress: self.partitio_progress.update(&self.process, self.module)?,
+            temenos_progress: self.temenos_progress.update(&self.process, self.module)?,
+            osvald_progress: self.osvald_progress.update(&self.process, self.module)?,
+            throne_progress: self.throne_progress.update(&self.process, self.module)?,
             agnea_progress: self.agnea_progress.update(&self.process, self.module)?,
             settings: &self.settings,
             splits: &mut self.splits,
@@ -119,6 +140,13 @@ impl Display for Character {
 pub struct Vars<'a> {
     start: &'a Pair<u8>,
     game_state: &'a Pair<u8>,
+    hikari_progress: &'a Pair<u16>,
+    ochette_progress: &'a Pair<u16>,
+    castti_progress: &'a Pair<u16>,
+    partitio_progress: &'a Pair<u16>,
+    temenos_progress: &'a Pair<u16>,
+    osvald_progress: &'a Pair<u16>,
+    throne_progress: &'a Pair<u16>,
     agnea_progress: &'a Pair<u16>,
     settings: &'a Settings,
     splits: &'a mut HashSet<String>,
@@ -201,8 +229,43 @@ pub extern "C" fn update() {
 }
 
 fn should_split(vars: &mut Vars) -> Option<String> {
+    // Hikari
+    if let Some(split) = splits::hikari::HikariSplits::chapter_split(vars) {
+        return Some(split);
+    }
+
+    // Castti
+    if let Some(split) = splits::castti::CasttiSplits::chapter_split(vars) {
+        return Some(split);
+    }
+
     // Agnea
     if let Some(split) = splits::agnea::AgneaSplits::chapter_split(vars) {
+        return Some(split);
+    }
+
+    // Ochette
+    if let Some(split) = splits::ochette::OchetteSplits::chapter_split(vars) {
+        return Some(split);
+    }
+
+    // Osvald
+    if let Some(split) = splits::osvald::OsvaldSplits::chapter_split(vars) {
+        return Some(split);
+    }
+
+    // Partitio
+    if let Some(split) = splits::partitio::PartitioSplits::chapter_split(vars) {
+        return Some(split);
+    }
+
+    // Temenos
+    if let Some(split) = splits::temenos::TemenosSplits::chapter_split(vars) {
+        return Some(split);
+    }
+
+    // Throne
+    if let Some(split) = splits::throne::ThroneSplits::chapter_split(vars) {
         return Some(split);
     }
 

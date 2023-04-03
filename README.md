@@ -6,6 +6,15 @@ A Windows and Linux autosplitter for Octopath Traveler 2
 
 # TODO:
 
+- [-] Character Splits
+- [ ] Ending splits
+- [ ] Character Joins
+- [ ] Enter/Exit Zone
+- [ ] Get Job License
+- [ ] Get Shrine
+- [ ] Chapter Ends on Frame (first black frame when fin screen shows... maybe achievement?)
+
+
 ## Install
 Since this autosplitter is in prerelease, you'll need to download the following file and add an autosplitter component to your splits and add this file. WASM files should not be supported in mainline livesplit.
 
