@@ -14,9 +14,20 @@ version = "0.1.0"
 source = "git+https://github.com/CryZe/asr#4949bad1925169ce2382ff6378e56e6ece02b0c8"
 dependencies = [
  "arrayvec",
+ "asr-derive",
  "bytemuck",
  "itoa",
  "time",
+]
+
+[[package]]
+name = "asr-derive"
+version = "0.1.0"
+source = "git+https://github.com/CryZe/asr#4949bad1925169ce2382ff6378e56e6ece02b0c8"
+dependencies = [
+ "heck",
+ "quote",
+ "syn 2.0.10",
 ]
 
 [[package]]
@@ -56,6 +67,12 @@ name = "cfg-if"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
+
+[[package]]
+name = "heck"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
 
 [[package]]
 name = "itoa"

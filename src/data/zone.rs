@@ -1,7 +1,9 @@
 use phf::phf_map;
+use crate::Character;
 
 pub struct ZoneDescription {
     name: &'static str,
+    character: Character;
     region: &'static str,
     ring: u8,
 }
