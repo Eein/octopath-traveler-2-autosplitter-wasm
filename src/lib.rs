@@ -53,6 +53,8 @@ struct Game {
     throne_progress: Watcher<u16>,
     agnea_progress: Watcher<u16>,
     settings: Settings,
+    loading: Watcher<u8>,
+    saving: Watcher<u8>,
     start: Watcher<u8>,
 }
 
@@ -64,6 +66,8 @@ impl Game {
             start: Watcher::new(vec![0x5219628, 0xA8]),
             settings: Settings::register(),
             game_state: Watcher::new(vec![0x4F7AB68, 0x234]),
+            loading: Watcher::new(vec![0x4F7CDD8, 0x308, 0x1A8]),
+            saving: Watcher::new(vec![0x4F7CDD8, 0x310, 0x1A8]),
             hikari_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x0 + 0xEC]),
             ochette_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0xF0 + 0xEC]),
             castti_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x1E0 + 0xEC]),
@@ -80,6 +84,8 @@ impl Game {
     fn update_vars(&mut self) -> Option<Vars<'_>> {
         Some(Vars {
             start: self.start.update(&self.process, self.module)?,
+            loading: self.loading.update(&self.process, self.module)?,
+            saving: self.saving.update(&self.process, self.module)?,
             game_state: self.game_state.update(&self.process, self.module)?,
             hikari_progress: self.hikari_progress.update(&self.process, self.module)?,
             ochette_progress: self.ochette_progress.update(&self.process, self.module)?,
@@ -138,6 +144,8 @@ impl Display for Character {
 #[allow(unused)]
 pub struct Vars<'a> {
     start: &'a Pair<u8>,
+    loading: &'a Pair<u8>,
+    saving: &'a Pair<u8>,
     game_state: &'a Pair<u8>,
     hikari_progress: &'a Pair<u16>,
     ochette_progress: &'a Pair<u16>,
@@ -218,6 +226,15 @@ pub extern "C" fn update() {
                         asr::print_message(&reason);
                         timer::split();
                     }
+                    // load/save removal
+                    if (vars.loading.old == 0 && vars.loading.current != 0) || (vars.saving.old == 0 && vars.saving.current != 0)  {
+                        timer::pause_game_time()
+                    }
+
+                    if vars.loading.current == 0 && vars.saving.current == 0  {
+                        timer::resume_game_time()
+                    }
+
                 }
                 _ => {}
             }
