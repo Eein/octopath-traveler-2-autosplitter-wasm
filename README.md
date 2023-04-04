@@ -18,7 +18,9 @@ A Windows and Linux autosplitter for Octopath Traveler 2
 
 ## Load/Autosave Removal 
 
-To remove loads and autosaves, enable the setting in the options menu for the Autosplitting Runtime
+To remove loads and autosaves, enable the setting in the options menu for the Autosplitting Runtime 
+
+You may add a second timer and configure it for only game time, if you want to track load/save-less runs.
 
 ## Install
 
