@@ -53,9 +53,10 @@ struct Game {
     throne_progress: Watcher<u16>,
     agnea_progress: Watcher<u16>,
     settings: Settings,
-    loading: Watcher<u8>,
-    saving: Watcher<u8>,
+    loading: Watcher<u16>,
+    saving: Watcher<u16>,
     start: Watcher<u8>,
+    dialog: Watcher<u8>,
 }
 
 impl Game {
@@ -64,9 +65,10 @@ impl Game {
             process,
             module,
             start: Watcher::new(vec![0x5219628, 0xA8]),
+            dialog: Watcher::new(vec![0x5189F00, 0x20, 0xC8, 0x278, 0x10, 0x308]),
             settings: Settings::register(),
             game_state: Watcher::new(vec![0x4F7AB68, 0x234]),
-            loading: Watcher::new(vec![0x4F7CDD8, 0x308, 0x1A8]),
+            loading: Watcher::new(vec![0x4F7CDD8, 0x308, 0x2C0]),
             saving: Watcher::new(vec![0x4F7CDD8, 0x310, 0x280, 0x0c]),
             hikari_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x0 + 0xEC]),
             ochette_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0xF0 + 0xEC]),
@@ -84,6 +86,7 @@ impl Game {
     fn update_vars(&mut self) -> Option<Vars<'_>> {
         Some(Vars {
             start: self.start.update(&self.process, self.module)?,
+            dialog: self.dialog.update(&self.process, self.module)?,
             loading: self.loading.update(&self.process, self.module)?,
             saving: self.saving.update(&self.process, self.module)?,
             game_state: self.game_state.update(&self.process, self.module)?,
@@ -144,8 +147,9 @@ impl Display for Character {
 #[allow(unused)]
 pub struct Vars<'a> {
     start: &'a Pair<u8>,
-    loading: &'a Pair<u8>,
-    saving: &'a Pair<u8>,
+    dialog: &'a Pair<u8>,
+    loading: &'a Pair<u16>,
+    saving: &'a Pair<u16>,
     game_state: &'a Pair<u8>,
     hikari_progress: &'a Pair<u16>,
     ochette_progress: &'a Pair<u16>,
@@ -217,6 +221,7 @@ pub extern "C" fn update() {
                     if vars.game_state.current == 1
                         && vars.start.old == 0
                         && vars.start.current == 1
+                        && vars.dialog.current == 1
                     {
                         timer::start()
                     }
@@ -229,11 +234,13 @@ pub extern "C" fn update() {
 
                     if vars.settings.load_removal {
                         // load/save removal
-                        if vars.loading.current == 0 && vars.saving.old > vars.saving.current  {
+                        if vars.loading.current == 0 && vars.saving.old > vars.saving.current {
                             timer::resume_game_time()
                         }
 
-                        if (vars.loading.old == 0 && vars.loading.current != 0) || (vars.saving.current != 0 && vars.saving.old < vars.saving.current)  {
+                        if (vars.loading.old == 0 && vars.loading.current != 0)
+                            || (vars.saving.current != 0 && vars.saving.old < vars.saving.current)
+                        {
                             timer::pause_game_time()
                         }
                     }
