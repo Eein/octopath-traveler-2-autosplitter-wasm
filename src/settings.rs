@@ -8,6 +8,9 @@ pub struct Settings {
     /// Throne Main Story Complete (End Single Story)
     pub throne_story_complete: bool,
     #[default = false]
+    /// Throne joins the party
+    pub throne_joins: bool,
+    #[default = false]
     /// Throne 1 - On the Run
     pub throne_10: bool,
     #[default = false]
@@ -239,6 +242,9 @@ pub struct Settings {
     #[default = false]
     /// Temenos Main Story Complete (End Single Story)
     pub temenos_story_complete: bool,
+    #[default = false]
+    /// Temenos joins the party
+    pub temenos_joins: bool,
     #[default = false]
     /// Temenos 1 - The Eight Gods
     pub temenos_10: bool,
@@ -490,6 +496,9 @@ pub struct Settings {
     /// Partitio Main Story Complete (End Single Story)
     pub partitio_story_complete: bool,
     #[default = false]
+    /// Partitio joins the party
+    pub partitio_joins: bool,
+    #[default = false]
     /// Partitio 1 - There Ain't Scratch
     pub partitio_10: bool,
     #[default = false]
@@ -676,6 +685,9 @@ pub struct Settings {
     #[default = false]
     /// Osvald Main Story Complete (End Single Story)
     pub osvald_story_complete: bool,
+    #[default = false]
+    /// Osvald joins the party
+    pub osvald_joins: bool,
     #[default = false]
     /// Osvald 1 - The Trial
     pub osvald_10: bool,
@@ -873,6 +885,9 @@ pub struct Settings {
     /// Ochette Main Story Complete (End Single Story)
     pub ochette_story_complete: bool,
     #[default = false]
+    /// Ochette joins the party
+    pub ochette_joins: bool,
+    #[default = false]
     /// Ochette 1 - A Loyal Companion
     pub ochette_10: bool,
     #[default = false]
@@ -1062,6 +1077,9 @@ pub struct Settings {
     #[default = false]
     /// Castti Main Story Complete (End Single Story)
     pub castti_story_complete: bool,
+    #[default = false]
+    /// Castti joins the party
+    pub castti_joins: bool,
     #[default = false]
     /// Castti 1 - Memories
     pub castti_10: bool,
@@ -1312,6 +1330,9 @@ pub struct Settings {
     #[default = false]
     /// Hikari Main Story Complete (End Single Story)
     pub hikari_story_complete: bool,
+    #[default = false]
+    /// Hikari joins the party
+    pub hikari_joins: bool,
     #[default = false]
     /// Hikari 1 - Before the Battle, Before Their Graves
     pub hikari_10: bool,
@@ -1595,6 +1616,9 @@ pub struct Settings {
     #[default = false]
     /// Agnea Main Story Complete (End Single Story)
     pub agnea_story_complete: bool,
+    #[default = false]
+    /// Agnea joins the party
+    pub agnea_joins: bool,
     #[default = false]
     /// Agnea 1 - Dreams of Stardom
     pub agnea_10: bool,

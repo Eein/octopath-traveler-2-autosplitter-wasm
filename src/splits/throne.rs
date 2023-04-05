@@ -9,6 +9,16 @@ impl ThroneSplits {
         if let Some(split) = Self::main_story_complete(vars) {
             return Some(split);
         }
+        if let Some(split) = Self::joins_party(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn joins_party(vars: &mut Vars) -> Option<String> {
+        if vars.throne_hp.old == 0 && vars.throne_hp.current != 0 {
+            return vars.split("throne_joins", vars.settings.throne_joins);
+        }
         None
     }
 

@@ -9,6 +9,16 @@ impl AgneaSplits {
         if let Some(split) = Self::main_story_complete(vars) {
             return Some(split);
         }
+        if let Some(split) = Self::joins_party(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn joins_party(vars: &mut Vars) -> Option<String> {
+        if vars.agnea_hp.old == 0 && vars.agnea_hp.current != 0 {
+            return vars.split("agnea_joins", vars.settings.agnea_joins);
+        }
         None
     }
 

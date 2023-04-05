@@ -9,6 +9,16 @@ impl TemenosSplits {
         if let Some(split) = Self::main_story_complete(vars) {
             return Some(split);
         }
+        if let Some(split) = Self::joins_party(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn joins_party(vars: &mut Vars) -> Option<String> {
+        if vars.temenos_hp.old == 0 && vars.temenos_hp.current != 0 {
+            return vars.split("temenos_joins", vars.settings.temenos_joins);
+        }
         None
     }
 

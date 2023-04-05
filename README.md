@@ -7,12 +7,12 @@ A Windows and Linux autosplitter for Octopath Traveler 2
 # TODO:
 
 - [x] Character Splits
-- [ ] Ending splits
-- [ ] Character Joins
+- [x] Ending splits
+- [x] Character Joins
 - [ ] Enter/Exit Zone
 - [ ] Get Job License
 - [ ] Get Shrine
-- [ ] Chapter Ends on Frame (first black frame when fin screen shows... maybe achievement?)
+- [x] Chapter Ends on Frame - uses cue card json
 - [x] Load/AutoSave Removal
 
 

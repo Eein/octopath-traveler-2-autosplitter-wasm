@@ -9,6 +9,16 @@ impl OsvaldSplits {
         if let Some(split) = Self::main_story_complete(vars) {
             return Some(split);
         }
+        if let Some(split) = Self::joins_party(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn joins_party(vars: &mut Vars) -> Option<String> {
+        if vars.osvald_hp.old == 0 && vars.osvald_hp.current != 0 {
+            return vars.split("osvald_joins", vars.settings.osvald_joins);
+        }
         None
     }
 

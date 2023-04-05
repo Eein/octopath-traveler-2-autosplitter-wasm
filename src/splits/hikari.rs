@@ -9,6 +9,16 @@ impl HikariSplits {
         if let Some(split) = Self::main_story_complete(vars) {
             return Some(split);
         }
+        if let Some(split) = Self::joins_party(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn joins_party(vars: &mut Vars) -> Option<String> {
+        if vars.hikari_hp.old == 0 && vars.hikari_hp.current != 0 {
+            return vars.split("hikari_joins", vars.settings.hikari_joins);
+        }
         None
     }
 

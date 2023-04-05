@@ -9,6 +9,16 @@ impl OchetteSplits {
         if let Some(split) = Self::main_story_complete(vars) {
             return Some(split);
         }
+        if let Some(split) = Self::joins_party(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn joins_party(vars: &mut Vars) -> Option<String> {
+        if vars.ochette_hp.old == 0 && vars.ochette_hp.current != 0 {
+            return vars.split("ochette_joins", vars.settings.ochette_joins);
+        }
         None
     }
 
