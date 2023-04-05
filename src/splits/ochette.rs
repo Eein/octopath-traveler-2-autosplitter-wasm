@@ -2,7 +2,30 @@ pub struct OchetteSplits;
 use crate::Vars;
 
 impl OchetteSplits {
-    pub fn chapter_split(vars: &mut Vars) -> Option<String> {
+    pub fn split(vars: &mut Vars) -> Option<String> {
+        if let Some(split) = Self::chapter_split(vars) {
+            return Some(split);
+        }
+        if let Some(split) = Self::main_story_complete(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn main_story_complete(vars: &mut Vars) -> Option<String> {
+        if vars.ochette_progress.current == 2500
+            && vars.game_state.current == 2
+            && vars.event_index.current >= 130
+        {
+            return vars.split(
+                "ochette_story_complete",
+                vars.settings.ochette_story_complete,
+            );
+        }
+        None
+    }
+
+    fn chapter_split(vars: &mut Vars) -> Option<String> {
         // checks if an old save is lingering, also make sure old zone id isn't 0 later
         if vars.ochette_progress.old != vars.ochette_progress.current {
             match vars.ochette_progress.current {

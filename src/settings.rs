@@ -3,6 +3,7 @@ pub struct Settings {
     #[default = false]
     /// Load/Autosave Remover
     pub load_removal: bool,
+
     #[default = false]
     /// Throne Main Story Complete (End Single Story)
     pub throne_story_complete: bool,
@@ -234,6 +235,10 @@ pub struct Settings {
     #[default = false]
     /// Throne 4 - The Stench of Blood
     pub throne_3000: bool,
+
+    #[default = false]
+    /// Temenos Main Story Complete (End Single Story)
+    pub temenos_story_complete: bool,
     #[default = false]
     /// Temenos 1 - The Eight Gods
     pub temenos_10: bool,
@@ -480,6 +485,10 @@ pub struct Settings {
     #[default = false]
     /// Temenos 4 - A Journey Ends, a Stroll Begins
     pub temenos_2500: bool,
+
+    #[default = false]
+    /// Partitio Main Story Complete (End Single Story)
+    pub partitio_story_complete: bool,
     #[default = false]
     /// Partitio 1 - There Ain't Scratch
     pub partitio_10: bool,
@@ -663,6 +672,10 @@ pub struct Settings {
     #[default = false]
     /// Partitio 4 - Traveling the World
     pub partitio_2000: bool,
+
+    #[default = false]
+    /// Osvald Main Story Complete (End Single Story)
+    pub osvald_story_complete: bool,
     #[default = false]
     /// Osvald 1 - The Trial
     pub osvald_10: bool,
@@ -855,6 +868,10 @@ pub struct Settings {
     #[default = false]
     /// Osvald 5 - An Answer, a Journey
     pub osvald_2500: bool,
+
+    #[default = false]
+    /// Ochette Main Story Complete (End Single Story)
+    pub ochette_story_complete: bool,
     #[default = false]
     /// Ochette 1 - A Loyal Companion
     pub ochette_10: bool,
@@ -1041,6 +1058,10 @@ pub struct Settings {
     #[default = false]
     /// Ochette 3 - Ochette, Guardian of Toto'haha
     pub ochette_2500: bool,
+
+    #[default = false]
+    /// Castti Main Story Complete (End Single Story)
+    pub castti_story_complete: bool,
     #[default = false]
     /// Castti 1 - Memories
     pub castti_10: bool,
@@ -1287,6 +1308,10 @@ pub struct Settings {
     #[default = false]
     /// Castti 4 - The Deeds of Eir's Apothecaries
     pub castti_2500: bool,
+
+    #[default = false]
+    /// Hikari Main Story Complete (End Single Story)
+    pub hikari_story_complete: bool,
     #[default = false]
     /// Hikari 1 - Before the Battle, Before Their Graves
     pub hikari_10: bool,
@@ -1566,6 +1591,10 @@ pub struct Settings {
     #[default = false]
     /// Hikari 5 - Clear Skies
     pub hikari_2500: bool,
+
+    #[default = false]
+    /// Agnea Main Story Complete (End Single Story)
+    pub agnea_story_complete: bool,
     #[default = false]
     /// Agnea 1 - Dreams of Stardom
     pub agnea_10: bool,

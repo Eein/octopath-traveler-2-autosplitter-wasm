@@ -2,6 +2,26 @@ pub struct HikariSplits;
 use crate::Vars;
 
 impl HikariSplits {
+    pub fn split(vars: &mut Vars) -> Option<String> {
+        if let Some(split) = Self::chapter_split(vars) {
+            return Some(split);
+        }
+        if let Some(split) = Self::main_story_complete(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn main_story_complete(vars: &mut Vars) -> Option<String> {
+        if vars.hikari_progress.current == 2500
+            && vars.game_state.current == 2
+            && vars.event_index.current >= 145
+        {
+            return vars.split("hikari_story_complete", vars.settings.hikari_story_complete);
+        }
+        None
+    }
+
     pub fn chapter_split(vars: &mut Vars) -> Option<String> {
         // checks if an old save is lingering, also make sure old zone id isn't 0 later
         if vars.hikari_progress.old != vars.hikari_progress.current {

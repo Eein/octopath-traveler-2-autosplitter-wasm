@@ -2,7 +2,30 @@ pub struct PartitioSplits;
 use crate::Vars;
 
 impl PartitioSplits {
-    pub fn chapter_split(vars: &mut Vars) -> Option<String> {
+    pub fn split(vars: &mut Vars) -> Option<String> {
+        if let Some(split) = Self::chapter_split(vars) {
+            return Some(split);
+        }
+        if let Some(split) = Self::main_story_complete(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn main_story_complete(vars: &mut Vars) -> Option<String> {
+        if vars.partitio_progress.current == 2000
+            && vars.game_state.current == 2
+            && vars.event_index.current >= 125
+        {
+            return vars.split(
+                "partitio_story_complete",
+                vars.settings.partitio_story_complete,
+            );
+        }
+        None
+    }
+
+    fn chapter_split(vars: &mut Vars) -> Option<String> {
         // checks if an old save is lingering, also make sure old zone id isn't 0 later
         if vars.partitio_progress.old != vars.partitio_progress.current {
             match vars.partitio_progress.current {

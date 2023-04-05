@@ -2,7 +2,27 @@ pub struct CasttiSplits;
 use crate::Vars;
 
 impl CasttiSplits {
-    pub fn chapter_split(vars: &mut Vars) -> Option<String> {
+    pub fn split(vars: &mut Vars) -> Option<String> {
+        if let Some(split) = Self::chapter_split(vars) {
+            return Some(split);
+        }
+        if let Some(split) = Self::main_story_complete(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn main_story_complete(vars: &mut Vars) -> Option<String> {
+        if vars.castti_progress.current == 2500
+            && vars.game_state.current == 2
+            && vars.event_index.current >= 128
+        {
+            return vars.split("castti_story_complete", vars.settings.castti_story_complete);
+        }
+        None
+    }
+
+    fn chapter_split(vars: &mut Vars) -> Option<String> {
         // checks if an old save is lingering, also make sure old zone id isn't 0 later
         if vars.castti_progress.old != vars.castti_progress.current {
             match vars.castti_progress.current {

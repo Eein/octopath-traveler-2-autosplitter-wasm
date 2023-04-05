@@ -2,7 +2,27 @@ pub struct OsvaldSplits;
 use crate::Vars;
 
 impl OsvaldSplits {
-    pub fn chapter_split(vars: &mut Vars) -> Option<String> {
+    pub fn split(vars: &mut Vars) -> Option<String> {
+        if let Some(split) = Self::chapter_split(vars) {
+            return Some(split);
+        }
+        if let Some(split) = Self::main_story_complete(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn main_story_complete(vars: &mut Vars) -> Option<String> {
+        if vars.osvald_progress.current == 2500
+            && vars.game_state.current == 2
+            && vars.event_index.current >= 153
+        {
+            return vars.split("osvald_story_complete", vars.settings.osvald_story_complete);
+        }
+        None
+    }
+
+    fn chapter_split(vars: &mut Vars) -> Option<String> {
         // checks if an old save is lingering, also make sure old zone id isn't 0 later
         if vars.osvald_progress.old != vars.osvald_progress.current {
             match vars.osvald_progress.current {

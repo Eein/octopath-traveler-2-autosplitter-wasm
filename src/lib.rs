@@ -94,11 +94,11 @@ impl Game {
             dialog: self.dialog.update(&self.process, self.module)?,
             loading: match self.loading.update(&self.process, self.module) {
                 Some(update) => update,
-                None => &Pair{old: 0, current: 0} 
+                None => &Pair { old: 0, current: 0 },
             },
             saving: match self.saving.update(&self.process, self.module) {
                 Some(update) => update,
-                None => &Pair{old: 0, current: 0} 
+                None => &Pair { old: 0, current: 0 },
             },
             game_state: self.game_state.update(&self.process, self.module)?,
             hikari_progress: self.hikari_progress.update(&self.process, self.module)?,
@@ -267,48 +267,29 @@ pub extern "C" fn update() {
 }
 
 fn should_split(vars: &mut Vars) -> Option<String> {
-    // Hikari
-    if let Some(split) = splits::hikari::HikariSplits::chapter_split(vars) {
+    if let Some(split) = splits::hikari::HikariSplits::split(vars) {
         return Some(split);
     }
-
-    // Castti
-    if let Some(split) = splits::castti::CasttiSplits::chapter_split(vars) {
+    if let Some(split) = splits::castti::CasttiSplits::split(vars) {
         return Some(split);
     }
-
-    // Agnea
-    if let Some(split) = splits::agnea::AgneaSplits::chapter_split(vars) {
+    if let Some(split) = splits::agnea::AgneaSplits::split(vars) {
         return Some(split);
     }
-
-    // Ochette
-    if let Some(split) = splits::ochette::OchetteSplits::chapter_split(vars) {
+    if let Some(split) = splits::ochette::OchetteSplits::split(vars) {
         return Some(split);
     }
-
-    // Osvald
-    if let Some(split) = splits::osvald::OsvaldSplits::chapter_split(vars) {
+    if let Some(split) = splits::osvald::OsvaldSplits::split(vars) {
         return Some(split);
     }
-
-    // Partitio
-    if let Some(split) = splits::partitio::PartitioSplits::chapter_split(vars) {
+    if let Some(split) = splits::partitio::PartitioSplits::split(vars) {
         return Some(split);
     }
-
-    // Temenos
-    if let Some(split) = splits::temenos::TemenosSplits::chapter_split(vars) {
+    if let Some(split) = splits::temenos::TemenosSplits::split(vars) {
         return Some(split);
     }
-
-    // Throne
-    if let Some(split) = splits::throne::ThroneSplits::chapter_split(vars) {
+    if let Some(split) = splits::throne::ThroneSplits::split(vars) {
         return Some(split);
-    }
-    // Throne End
-    if vars.throne_progress.current == 3000 && vars.game_state.current == 2 && vars.event_index.current >= 122 {
-        return vars.split("throne_story_complete", vars.settings.throne_story_complete);
     }
 
     None

@@ -2,7 +2,27 @@ pub struct ThroneSplits;
 use crate::Vars;
 
 impl ThroneSplits {
-    pub fn chapter_split(vars: &mut Vars) -> Option<String> {
+    pub fn split(vars: &mut Vars) -> Option<String> {
+        if let Some(split) = Self::chapter_split(vars) {
+            return Some(split);
+        }
+        if let Some(split) = Self::main_story_complete(vars) {
+            return Some(split);
+        }
+        None
+    }
+
+    fn main_story_complete(vars: &mut Vars) -> Option<String> {
+        if vars.throne_progress.current == 3000
+            && vars.game_state.current == 2
+            && vars.event_index.current >= 122
+        {
+            return vars.split("throne_story_complete", vars.settings.throne_story_complete);
+        }
+        None
+    }
+
+    fn chapter_split(vars: &mut Vars) -> Option<String> {
         // checks if an old save is lingering, also make sure old zone id isn't 0 later
         if vars.throne_progress.old != vars.throne_progress.current {
             match vars.throne_progress.current {
@@ -84,8 +104,7 @@ impl ThroneSplits {
                 p if p == 3000 => return vars.split("throne_3000", vars.settings.throne_3000),
                 _ => return None,
             }
-        } else {
-            return None;
         }
+        None
     }
 }
