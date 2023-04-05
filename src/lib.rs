@@ -57,6 +57,7 @@ struct Game {
     saving: Watcher<u16>,
     start: Watcher<u8>,
     start_2: Watcher<u16>,
+    event_index: Watcher<u16>,
     dialog: Watcher<u8>,
 }
 
@@ -80,6 +81,7 @@ impl Game {
             osvald_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x4B0 + 0xEC]),
             throne_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x5A0 + 0xEC]),
             agnea_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x690 + 0xEC]),
+            event_index: Watcher::new(vec![0x4F7B1E0, 0x298]),
             splits: HashSet::new(),
         };
         Some(game)
@@ -107,6 +109,7 @@ impl Game {
             osvald_progress: self.osvald_progress.update(&self.process, self.module)?,
             throne_progress: self.throne_progress.update(&self.process, self.module)?,
             agnea_progress: self.agnea_progress.update(&self.process, self.module)?,
+            event_index: self.event_index.update(&self.process, self.module)?,
             settings: &self.settings,
             splits: &mut self.splits,
         })
@@ -169,6 +172,7 @@ pub struct Vars<'a> {
     osvald_progress: &'a Pair<u16>,
     throne_progress: &'a Pair<u16>,
     agnea_progress: &'a Pair<u16>,
+    event_index: &'a Pair<u16>,
     settings: &'a Settings,
     splits: &'a mut HashSet<String>,
 }
@@ -301,6 +305,10 @@ fn should_split(vars: &mut Vars) -> Option<String> {
     // Throne
     if let Some(split) = splits::throne::ThroneSplits::chapter_split(vars) {
         return Some(split);
+    }
+    // Throne End
+    if vars.throne_progress.current == 3000 && vars.game_state.current == 2 && vars.event_index.current >= 122 {
+        return vars.split("throne_story_complete", vars.settings.throne_story_complete);
     }
 
     None

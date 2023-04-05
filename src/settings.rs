@@ -4,6 +4,9 @@ pub struct Settings {
     /// Load/Autosave Remover
     pub load_removal: bool,
     #[default = false]
+    /// Throne Main Story Complete (End Single Story)
+    pub throne_story_complete: bool,
+    #[default = false]
     /// Throne 1 - On the Run
     pub throne_10: bool,
     #[default = false]
