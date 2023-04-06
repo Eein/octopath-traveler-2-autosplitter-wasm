@@ -1120,7 +1120,7 @@ pub struct Settings {
     /// Castti 1 - Unsanitary Beasts
     pub castti_140: bool,
     #[default = false]
-    /// Castti 1 - Purifying the Waters
+    /// Castti 1 - Purifying the Waters (Veron + Doron)
     pub castti_150: bool,
     #[default = false]
     /// Castti 1 - A Warm Welcome

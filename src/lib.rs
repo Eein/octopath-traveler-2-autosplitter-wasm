@@ -1,3 +1,4 @@
+use asr::print_message;
 // #![no_std]
 use spinning_top::{const_spinlock, Spinlock};
 use std::collections::HashSet;
@@ -63,7 +64,7 @@ struct Game {
     settings: Settings,
     loading: Watcher<u16>,
     saving: Watcher<u16>,
-    start: Watcher<u8>,
+    start: Watcher<u16>,
     event_index: Watcher<u16>,
     dialog: Watcher<u8>,
 }
@@ -179,7 +180,7 @@ impl Display for Character {
 
 #[allow(unused)]
 pub struct Vars<'a> {
-    start: &'a Pair<u8>,
+    start: &'a Pair<u16>,
     dialog: &'a Pair<u8>,
     loading: &'a Pair<u16>,
     saving: &'a Pair<u16>,
@@ -260,10 +261,8 @@ pub extern "C" fn update() {
             match timer::state() {
                 TimerState::NotRunning => {
                     vars.clear_splits();
-                    if vars.game_state.current == 1
-                        && vars.start.old == 0
-                        && vars.start.current == 1
-                    {
+
+                    if vars.game_state.current == 1 && vars.start.old < vars.start.current {
                         timer::start()
                     }
                 }
