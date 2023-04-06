@@ -64,7 +64,6 @@ struct Game {
     loading: Watcher<u16>,
     saving: Watcher<u16>,
     start: Watcher<u8>,
-    start_2: Watcher<u16>,
     event_index: Watcher<u16>,
     dialog: Watcher<u8>,
 }
@@ -74,8 +73,7 @@ impl Game {
         let game = Self {
             process,
             module,
-            start: Watcher::new(vec![0x5219628, 0xA8]),
-            start_2: Watcher::new(vec![0x51B1370, 0x8, 0x8, 0x210, 0x210, 0x8, 0x540]),
+            start: Watcher::new(vec![0x51E2190, 0x18, 0x4]),
             dialog: Watcher::new(vec![0x5189F00, 0x20, 0xC8, 0x278, 0x10, 0x308]),
             settings: Settings::register(),
             game_state: Watcher::new(vec![0x4F7AB68, 0x234]),
@@ -106,7 +104,6 @@ impl Game {
     fn update_vars(&mut self) -> Option<Vars<'_>> {
         Some(Vars {
             start: self.start.update(&self.process, self.module)?,
-            start_2: self.start_2.update(&self.process, self.module)?,
             dialog: self.dialog.update(&self.process, self.module)?,
             loading: match self.loading.update(&self.process, self.module) {
                 Some(update) => update,
@@ -183,7 +180,6 @@ impl Display for Character {
 #[allow(unused)]
 pub struct Vars<'a> {
     start: &'a Pair<u8>,
-    start_2: &'a Pair<u16>,
     dialog: &'a Pair<u8>,
     loading: &'a Pair<u16>,
     saving: &'a Pair<u16>,
@@ -266,9 +262,7 @@ pub extern "C" fn update() {
                     vars.clear_splits();
                     if vars.game_state.current == 1
                         && vars.start.old == 0
-                        && vars.start_2.current == 0
                         && vars.start.current == 1
-                        && vars.dialog.current == 1
                     {
                         timer::start()
                     }
