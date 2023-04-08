@@ -20,13 +20,7 @@ jobs:
         with:
           rust-version: 'stable' 
           targets: 'wasm32-unknown-unknown'
-
-      - name: Build Linux Shared Library
-        run: cargo build --target wasm32-unknown-unknown --release --features linux
-
-      - name: Move Linux
-        run: mv ./target/wasm32-unknown-unknown/release/octopath_traveler_2_autosplitter_wasm.wasm ./target/wasm32-unknown-unknown/release/octopath_traveler_2_autosplitter_linux_wasm.wasm 
-
+          
       - name: Build Regular Shared Library
         run: cargo build --target wasm32-unknown-unknown --release 
 
@@ -40,4 +34,3 @@ jobs:
           release_name: Release ${{ github.sha }}
           files: |
             ./target/wasm32-unknown-unknown/release/octopath_traveler_2_autosplitter_wasm.wasm
-            ./target/wasm32-unknown-unknown/release/octopath_traveler_2_autosplitter_linux_wasm.wasm

@@ -234,15 +234,27 @@ impl Vars<'_> {
 
 pub struct Splits(HashSet<String>);
 
-#[cfg_attr(feature = "linux", path = "linux_process.rs")]
-#[cfg_attr(feature = "windows", path = "windows_process.rs")]
-mod os_process;
-
 #[no_mangle]
 pub extern "C" fn update() {
     let mut state = STATE.lock();
     if state.game.is_none() {
-        match Process::attach(&os_process::get_process_name()) {
+        match Process::attach("Octopath_Travel") {
+            Some(process) => {
+                match process.get_module_address("Octopath_Traveler2-Win64-Shipping.exe") {
+                    Ok(Address(module)) => {
+                        asr::print_message("attached to process");
+
+                        state.game = Game::new(process, module)
+                    }
+                    _ => (),
+                };
+            }
+            None => (),
+        }
+    }
+    
+    if state.game.is_none() {
+        match Process::attach("Octopath_Traveler2") {
             Some(process) => {
                 match process.get_module_address("Octopath_Traveler2-Win64-Shipping.exe") {
                     Ok(Address(module)) => {

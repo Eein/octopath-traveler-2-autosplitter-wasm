@@ -24,8 +24,3 @@ panic = "abort"
 
 [profile.release.build-override]
 opt-level = 0
-
-[features]
-default = ["windows"]
-windows = []
-linux = []
