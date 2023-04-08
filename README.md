@@ -9,12 +9,16 @@ A Windows and Linux autosplitter for Octopath Traveler 2
 - [x] Character Splits
 - [x] Ending splits
 - [x] Character Joins
-- [ ] Enter/Exit Zone
+- [x] Enter/Exit Zone
 - [ ] Get Job License
 - [ ] Get Shrine
 - [x] Chapter Ends on Frame - uses cue card json
 - [x] Load/AutoSave Removal
 
+
+## NOTE
+
+Before this can be merged into Autosplitters.xml it MUST have settings saving
 
 ## Load/Autosave Removal 
 
