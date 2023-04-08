@@ -298,8 +298,8 @@ pub extern "C" fn update() {
                     }
 
                     if vars.level_id.old != vars.level_id.current {
-                        let debug_text = format!("CHANGING ZONES from {} to {}", vars.level_id.old, vars.level_id.current);
-                        asr::print_message(&debug_text);
+                        // let debug_text = format!("CHANGING ZONES from {} to {}", vars.level_id.old, vars.level_id.current);
+                        // asr::print_message(&debug_text);
                         // trigger enter
                         if let Some(_split) = zone::Areas::enter_area(&mut vars) {
                             timer::split();
