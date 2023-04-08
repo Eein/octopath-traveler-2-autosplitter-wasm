@@ -1853,1663 +1853,1636 @@ pub struct Settings {
 
     // Levels
     #[default = false]
-    /// Enter Path to the Bed of the Titan
-    pub dng_wld_2_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Sunken Maw
-    pub dng_cty_1_4_enter: bool,
-
-    #[default = false]
     /// Enter Abandoned Church
     pub dng_mnt_3_3_enter: bool,
-
-    #[default = false]
-    /// Enter Stormy Cape
-    pub dng_isd_3_2_c_enter: bool,
-
-    #[default = false]
-    /// Enter Crackridge Harbor: Anchorage
-    pub fld_wld_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Ocean ???
-    pub fld_ocn_1_4_enter: bool,
-
-    #[default = false]
-    /// Enter Flamechurch: Cathedral
-    pub twn_mnt_1_2_b_enter: bool,
-
-    #[default = false]
-    /// Enter Diamante's Estate
-    pub dng_cty_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Fellsun Ruins
-    pub dng_wld_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter Eastern Ku Sands
-    pub fld_dst_3_2_enter: bool,
-
-    #[default = false]
-    /// Enter Battlefield
-    pub fld_dst_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Sand Lion's Den
-    pub dng_dst_2_4_enter: bool,
-
-    #[default = false]
-    /// Enter Veil of Trees
-    pub dng_fst_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Altar of the Trader
-    pub dng_wld_2_job_enter: bool,
-
-    #[default = false]
-    /// Enter Conning Creek: Outskirts
-    pub twn_sea_2_1_c_enter: bool,
-
-    #[default = false]
-    /// Enter Nameless Village
-    pub twn_isd_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Duskruin Shrine: Depths
-    pub dng_wld_3_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Winterbloom: Thieves' Quarter
-    pub twn_snw_2_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Nameless Isle
-    pub dng_ocn_1_3_enter: bool,
-
-    #[default = false]
-    /// Enter Altar of the Scholarking
-    pub dng_snw_2_job_enter: bool,
-
-    #[default = false]
-    /// Enter Five-Tiered Tower: Third Floor
-    pub dng_dst_3_2_c_enter: bool,
-
-    #[default = false]
-    /// Enter 
-    pub evt_kar_10_0400_enter: bool,
-
-    #[default = false]
-    /// Enter Castle Mei: East Tower
-    pub dng_snw_3_2_a_enter: bool,
-
-    #[default = false]
-    /// Enter 
-    pub evt_sin_ms_sin_10_0100_enter: bool,
-
-    #[default = false]
-    /// Enter Path to the Tombs of the Wardenbeasts
-    pub fld_isd_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Western Clockbank Highroad
-    pub fld_cty_1_4_enter: bool,
-
-    #[default = false]
-    /// Enter Starfall Spring
-    pub dng_fst_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Western Canalbrine Coast
-    pub fld_sea_1_3_enter: bool,
-
-    #[default = false]
-    /// Enter Cathedral Cellars
-    pub dng_mnt_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Western Tropu'hopu Traverse
-    pub fld_isd_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter Castle Vidania
-    pub dng_atl_3_1_enter: bool,
-
-    #[default = false]
-    /// Enter Sacred Peak Altahe
-    pub dng_snw_3_3_enter: bool,
-
-    #[default = false]
-    /// Enter 
-    pub dng_gur_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter New Delsta Harbor: Anchorage
-    pub fld_cty_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Deserted Highroad
-    pub fld_cty_3_1_enter: bool,
-
-    #[default = false]
-    /// Enter Stormhail: Castle Mei
-    pub twn_snw_3_2_a_enter: bool,
-
-    #[default = false]
-    /// Enter Altar of the Lady of Grace
-    pub dng_fst_2_job_enter: bool,
-
-    #[default = false]
-    /// Enter Oresrush: Foundry
-    pub twn_wld_1_2_b_enter: bool,
-
-    #[default = false]
-    /// Enter Beneath the Wall
-    pub dng_snw_3_4_a_enter: bool,
-
-    #[default = false]
-    /// Enter Ivory Ravine
-    pub dng_wld_3_2_enter: bool,
-
-    #[default = false]
-    /// Enter Conning Creek
-    pub twn_sea_2_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter New Delsta Flats
-    pub fld_cty_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Northern Ryu Sands
-    pub fld_dst_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Rifted Rock
-    pub dng_isd_3_1_c_enter: bool,
-
-    #[default = false]
-    /// Enter Forest Path
-    pub fld_fst_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Unfinished Tunnel
-    pub dng_wld_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Roque Island: Headquarters
-    pub twn_sea_3_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Abandoned Village
-    pub twn_cty_1_2_a_enter: bool,
-
-    #[default = false]
-    /// Enter Stormhail: Bridge
-    pub twn_snw_3_1_c_enter: bool,
-
-    #[default = false]
-    /// Enter Northern Conning Creek Coast
-    pub fld_sea_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter Oresrush
-    pub twn_wld_1_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter 
-    pub twn_gur_m_a_enter: bool,
-
-    #[default = false]
-    /// Enter Dark Night
-    pub dng_fst_2_2_b_enter: bool,
-
-    #[default = false]
-    /// Enter Animal Trail
-    pub dng_fst_2_2_a_enter: bool,
-
-    #[default = false]
-    /// Enter Underground Laboratory
-    pub dng_mnt_2_3_enter: bool,
-
-    #[default = false]
-    /// Enter Tropu'hopu: Floating Theater
-    pub twn_isd_2_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Eastern Sai Sands
-    pub fld_dst_2_4_enter: bool,
-
-    #[default = false]
-    /// Enter The Roque Company: West Tower
-    pub dng_sea_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Road to Mother's Garden
-    pub fld_fst_3_1_enter: bool,
-
-    #[default = false]
-    /// Enter Tropu'hopu
-    pub twn_isd_2_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Mother's Garden
-    pub dng_fst_3_2_enter: bool,
-
-    #[default = false]
-    /// Enter Curious Nest
-    pub dng_ocn_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Lostseed Castle: Upper Level
-    pub dng_cty_3_2_b_enter: bool,
-
-    #[default = false]
-    /// Enter Flamechurch: Cathedral Entrance
-    pub twn_mnt_1_2_a_enter: bool,
-
-    #[default = false]
-    /// Enter Merry Hills
-    pub twn_mnt_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter The Roque Company: Factory
-    pub dng_cty_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter Lair of the Usurper
-    pub dng_sea_1_3_enter: bool,
-
-    #[default = false]
-    /// Enter Western Merry Hills Pass
-    pub fld_mnt_3_2_enter: bool,
-
-    #[default = false]
-    /// Enter 
-    pub evt_kar_30_001_enter: bool,
-
-    #[default = false]
-    /// Enter Seat of the Water Sprite
-    pub dng_mnt_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter Southern Ku Sands
-    pub fld_dst_3_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Five-Tiered Tower
-    pub dng_dst_3_2_a_enter: bool,
-
-    #[default = false]
-    /// Enter Conning Creek: Harbor
-    pub twn_sea_2_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Western Montwise Pass
-    pub fld_mnt_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter Giff's Manse
-    pub dng_wld_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Prison: Underground Passage
-    pub dng_snw_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Oresrush: Foundry
-    pub twn_wld_1_2_a_enter: bool,
-
-    #[default = false]
-    /// Enter Northern Montwise Pass
-    pub fld_mnt_3_1_enter: bool,
-
-    #[default = false]
-    /// Enter Sinking Ruins
-    pub dng_isd_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter The Roque Company: East Tower
-    pub dng_sea_3_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Summit of Strife
-    pub dng_isd_3_2_a_enter: bool,
-
-    #[default = false]
-    /// Enter Healeaks
-    pub twn_cty_1_2_b_enter: bool,
-
-    #[default = false]
-    /// Enter Western Winterbloom Snows
-    pub fld_snw_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter Beasting Village
-    pub twn_isd_1_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Southern Cropdale Trail
-    pub fld_fst_1_4_enter: bool,
-
-    #[default = false]
-    /// Enter Ruffians' Hideout
-    pub dng_snw_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Eastern Cape Cold Snows
-    pub fld_snw_1_3_enter: bool,
-
-    #[default = false]
-    /// Enter Clockbank
-    pub twn_cty_2_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Timberain Castle
-    pub dng_fst_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Canalbrine Bridge
-    pub fld_sea_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Five-Tiered Tower: Second Floor
-    pub dng_dst_3_2_b_enter: bool,
-
-    #[default = false]
-    /// Enter Southern Sai Sands
-    pub fld_dst_2_3_enter: bool,
-
-    #[default = false]
-    /// Enter 
-    pub fld_gur_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Sacred Guard Ship
-    pub dng_sea_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Canalbrine: Path to the Water Source
-    pub fld_sea_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Ku: Castle Town
-    pub twn_dst_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Western Sai Sands
-    pub fld_dst_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter On the Water
-    pub fld_ocn_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Abandoned Traverse
-    pub fld_mnt_3_3_enter: bool,
-
-    #[default = false]
-    /// Enter Vidania
-    pub fld_atl_3_1_enter: bool,
-
-    #[default = false]
-    /// Enter Flamechurch Pilgrims' Way
-    pub fld_mnt_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Merry Hills: Shrine Entrance
-    pub twn_mnt_3_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter New Delsta: Backstreets
-    pub twn_cty_1_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Wellgrove: Alrond's Estate
-    pub twn_fst_2_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Abandoned Waterway
-    pub dng_cty_1_3_enter: bool,
-
-    #[default = false]
-    /// Enter Roque Island
-    pub twn_sea_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Montwise: Underground Arena
-    pub twn_mnt_2_1_c_enter: bool,
-
-    #[default = false]
-    /// Enter Verdant Wood
-    pub dng_isd_3_2_b_enter: bool,
-
-    #[default = false]
-    /// Enter Frigit Isle: Mining Site
-    pub twn_snw_1_1_c_enter: bool,
-
-    #[default = false]
-    /// Enter Eastern Cropdale Trail
-    pub fld_fst_1_3_enter: bool,
-
-    #[default = false]
-    /// Enter Altar of the Prince of Thieves
-    pub dng_cty_2_job_enter: bool,
-
-    #[default = false]
-    /// Enter Cavern of Waves
-    pub dng_isd_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter New Delsta: Game Parlor
-    pub twn_cty_1_1_c_enter: bool,
-
-    #[default = false]
-    /// Enter Cavern of the Moon and Sun
-    pub dng_sea_2_3_enter: bool,
-
-    #[default = false]
-    /// Enter New Delsta
-    pub twn_cty_1_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Moonview Cliff
-    pub dng_isd_3_2_d_enter: bool,
-
-    #[default = false]
-    /// Enter Tranquil Grotto
-    pub dng_dst_3_1_enter: bool,
-
-    #[default = false]
-    /// Enter Sai: East District
-    pub twn_dst_2_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Sai
-    pub twn_dst_2_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Decaying Temple
-    pub dng_dst_2_3_enter: bool,
-
-    #[default = false]
-    /// Enter Lostseed
-    pub twn_cty_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Stormhail: Sacred Guard Headquarters
-    pub twn_snw_3_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Old Campsite
-    pub fld_dst_2_5_b_enter: bool,
-
-    #[default = false]
-    /// Enter Abandoned Road
-    pub fld_wld_2_3_enter: bool,
-
-    #[default = false]
-    /// Enter Frigit Isle: Yard
-    pub twn_snw_1_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Southern Timberain Trail
-    pub fld_fst_3_2_enter: bool,
-
-    #[default = false]
-    /// Enter Southern Stormhail Snows
-    pub fld_snw_3_1_enter: bool,
-
-    #[default = false]
-    /// Enter Secret Forest
-    pub dng_fst_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter Dragonridge
-    pub dng_dst_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter Beasting Bay: Anchorage
-    pub fld_isd_1_3_enter: bool,
-
-    #[default = false]
-    /// Enter Southern Crackridge Wilds
-    pub fld_wld_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter Lostseed Castle
-    pub dng_cty_3_2_a_enter: bool,
-
-    #[default = false]
-    /// Enter Wandering Wood
-    pub dng_isd_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Forsaken Graveyard
-    pub dng_mnt_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter Southern Oresrush Wilds
-    pub fld_wld_1_3_enter: bool,
-
-    #[default = false]
-    /// Enter Five-Tiered Tower: Top Floor
-    pub dng_dst_3_2_e_enter: bool,
-
-    #[default = false]
-    /// Enter Southern Nameless Village Traverse
-    pub fld_isd_3_3_enter: bool,
-
-    #[default = false]
-    /// Enter Winterbloom
-    pub twn_snw_2_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Timberain Castle: Roof
-    pub dng_fst_3_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Bed of the Titan
-    pub dng_wld_2_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Theater
-    pub dng_cty_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Ku: Castle Town
-    pub twn_dst_3_1_a_fire_enter: bool,
-
-    #[default = false]
-    /// Enter Gate of ㌀㌁㌂㌃㌄
-    pub dng_ocn_1_4_enter: bool,
-
-    #[default = false]
-    /// Enter Tombs of the Wardenbeasts
-    pub dng_isd_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Old Clock Tower
-    pub dng_cty_2_3_enter: bool,
-
-    #[default = false]
-    /// Enter Tropu'hopu: Shipyard
-    pub twn_isd_2_1_c_enter: bool,
-
-    #[default = false]
-    /// Enter Borderfall
-    pub fld_mnt_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter Cropdale
-    pub twn_fst_1_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Mother's Garden: Orphanage
-    pub twn_fst_3_2_a_enter: bool,
-
-    #[default = false]
-    /// Enter Stormhail
-    pub twn_snw_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Sandflow Pass
-    pub fld_dst_2_5_a_enter: bool,
-
-    #[default = false]
-    /// Enter Altar of the Huntress
-    pub dng_isd_2_job_enter: bool,
-
-    #[default = false]
-    /// Enter Shrine of Ul'sterra
-    pub dng_mnt_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter 
-    pub evt_kus_10_003_enter: bool,
-
-    #[default = false]
-    /// Enter Clockbank: Industrial District
-    pub twn_cty_2_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter North Beasting Traverse
-    pub fld_isd_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Southern Clockbank Highroad
-    pub fld_cty_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter Festival Grounds
-    pub fld_fst_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Altar of the Charitable
-    pub dng_sea_2_job_enter: bool,
-
-    #[default = false]
-    /// Enter House Wellows Manor
-    pub dng_fst_3_3_enter: bool,
-
-    #[default = false]
-    /// Enter Eastern New Delsta Highroad
-    pub fld_cty_1_3_enter: bool,
-
-    #[default = false]
-    /// Enter Ryu
-    pub twn_dst_1_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Southern Cape Cold Snows
-    pub fld_snw_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Duskruin Shrine
-    pub dng_wld_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Roque Island: Anchorage
-    pub fld_sea_3_1_enter: bool,
-
-    #[default = false]
-    /// Enter Stage of the Moon and Sun
-    pub dng_mnt_3_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Western Gravell Wilds
-    pub fld_wld_3_2_enter: bool,
-
-    #[default = false]
-    /// Enter Snowhares' Den
-    pub dng_snw_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter Frigit Isle: Anchorage
-    pub fld_snw_1_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Gravell
-    pub twn_wld_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Mount Liphia
-    pub dng_cty_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter Castle Ku: Entrance
-    pub twn_dst_3_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Timberain Castle: Town Square
-    pub twn_fst_3_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Montwise: Library
-    pub twn_mnt_2_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Northern Wellgrove Trail
-    pub fld_fst_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter Path to Mount Liphia
-    pub fld_cty_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter Cape Cold
-    pub twn_snw_1_2_a_enter: bool,
-
-    #[default = false]
-    /// Enter Wandering Wood
-    pub dng_isd_3_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Oresrush
-    pub twn_wld_1_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Flamechurch
-    pub twn_mnt_1_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Shipwreck of the Empress
-    pub dng_ocn_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Canalbrine: Water Source
-    pub dng_sea_1_1_enter: bool,
-
-    #[default = false]
-    /// Enter Crackridge
-    pub twn_wld_2_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Eastern Wellgrove Trail
-    pub fld_fst_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter Abandoned Silver Mine
-    pub fld_wld_1_1_b_enter: bool,
-
-    #[default = false]
-    /// Enter Montwise
-    pub twn_mnt_2_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Wellgrove
-    pub twn_fst_2_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Quicksand Gaol
-    pub dng_dst_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter Oresrush
-    pub twn_wld_1_1_c_enter: bool,
-
-    #[default = false]
-    /// Enter Forbidden Shrine
-    pub dng_snw_3_1_enter: bool,
-
-    #[default = false]
-    /// Enter Frigit Isle: Entrance
-    pub fld_snw_1_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Altar of the Thunderblade
-    pub dng_dst_2_job_enter: bool,
-
-    #[default = false]
-    /// Enter Underground Waterway
-    pub dng_cty_3_1_enter: bool,
-
-    #[default = false]
-    /// Enter Silver Mine
-    pub fld_wld_1_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Frigit Isle: Prison
-    pub twn_snw_1_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Five-Tiered Tower: Fourth Floor
-    pub dng_dst_3_2_d_enter: bool,
-
-    #[default = false]
-    /// Enter Abyssal Beach
-    pub dng_isd_3_2_e_enter: bool,
-
-    #[default = false]
-    /// Enter The Lost Isle
-    pub fld_ocn_1_3_enter: bool,
-
-    #[default = false]
-    /// Enter Eastern Flamechurch Pass
-    pub fld_mnt_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Timberain
-    pub twn_fst_3_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Western Crackridge Wilds
-    pub fld_wld_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter Castle Ku
-    pub twn_dst_3_1_c_enter: bool,
-
-    #[default = false]
-    /// Enter Western Conning Creek Coast
-    pub fld_sea_2_3_enter: bool,
-
-    #[default = false]
-    /// Enter Infernal Castle
-    pub dng_snw_3_4_b_enter: bool,
-
-    #[default = false]
-    /// Enter Castle Mei: Gallows
-    pub dng_snw_3_2_b_enter: bool,
-
-    #[default = false]
-    /// Enter Path to the Duskruin Shrine
-    pub fld_wld_3_1_enter: bool,
-
-    #[default = false]
-    /// Enter Lighthouse Island
-    pub fld_ocn_1_2_enter: bool,
-
-    #[default = false]
-    /// Enter Guard Outpost
-    pub dng_sea_2_2_enter: bool,
-
-    #[default = false]
-    /// Enter Canalbrine
-    pub twn_sea_1_1_a_enter: bool,
-
-    #[default = false]
-    /// Enter Cavern of the Sea God
-    pub dng_sea_2_1_enter: bool,
-
-    #[default = false]
-    /// Enter Altar of the Flamebringer
-    pub dng_mnt_2_job_enter: bool,
-
-    #[default = false]
-    /// Exit Path to the Bed of the Titan
-    pub dng_wld_2_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Sunken Maw
-    pub dng_cty_1_4_exit: bool,
 
     #[default = false]
     /// Exit Abandoned Church
     pub dng_mnt_3_3_exit: bool,
 
     #[default = false]
-    /// Exit Stormy Cape
-    pub dng_isd_3_2_c_exit: bool,
-
-    #[default = false]
-    /// Exit Crackridge Harbor: Anchorage
-    pub fld_wld_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Ocean ???
-    pub fld_ocn_1_4_exit: bool,
-
-    #[default = false]
-    /// Exit Flamechurch: Cathedral
-    pub twn_mnt_1_2_b_exit: bool,
-
-    #[default = false]
-    /// Exit Diamante's Estate
-    pub dng_cty_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Fellsun Ruins
-    pub dng_wld_2_2_exit: bool,
-
-    #[default = false]
-    /// Exit Eastern Ku Sands
-    pub fld_dst_3_2_exit: bool,
-
-    #[default = false]
-    /// Exit Battlefield
-    pub fld_dst_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Sand Lion's Den
-    pub dng_dst_2_4_exit: bool,
-
-    #[default = false]
-    /// Exit Veil of Trees
-    pub dng_fst_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Altar of the Trader
-    pub dng_wld_2_job_exit: bool,
-
-    #[default = false]
-    /// Exit Conning Creek: Outskirts
-    pub twn_sea_2_1_c_exit: bool,
-
-    #[default = false]
-    /// Exit Nameless Village
-    pub twn_isd_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Duskruin Shrine: Depths
-    pub dng_wld_3_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Winterbloom: Thieves' Quarter
-    pub twn_snw_2_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Nameless Isle
-    pub dng_ocn_1_3_exit: bool,
-
-    #[default = false]
-    /// Exit Altar of the Scholarking
-    pub dng_snw_2_job_exit: bool,
-
-    #[default = false]
-    /// Exit Five-Tiered Tower: Third Floor
-    pub dng_dst_3_2_c_exit: bool,
-
-    #[default = false]
-    /// Exit Castle Mei: East Tower
-    pub dng_snw_3_2_a_exit: bool,
-
-    #[default = false]
-    /// Exit Path to the Tombs of the Wardenbeasts
-    pub fld_isd_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Western Clockbank Highroad
-    pub fld_cty_1_4_exit: bool,
-
-    #[default = false]
-    /// Exit Starfall Spring
-    pub dng_fst_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Western Canalbrine Coast
-    pub fld_sea_1_3_exit: bool,
-
-    #[default = false]
-    /// Exit Cathedral Cellars
-    pub dng_mnt_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Western Tropu'hopu Traverse
-    pub fld_isd_2_1_exit: bool,
-
-    #[default = false]
-    /// Exit Castle Vidania
-    pub dng_atl_3_1_exit: bool,
-
-    #[default = false]
-    /// Exit Sacred Peak Altahe
-    pub dng_snw_3_3_exit: bool,
-
-    #[default = false]
-    /// Exit New Delsta Harbor: Anchorage
-    pub fld_cty_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Deserted Highroad
-    pub fld_cty_3_1_exit: bool,
-
-    #[default = false]
-    /// Exit Stormhail: Castle Mei
-    pub twn_snw_3_2_a_exit: bool,
-
-    #[default = false]
-    /// Exit Altar of the Lady of Grace
-    pub dng_fst_2_job_exit: bool,
-
-    #[default = false]
-    /// Exit Oresrush: Foundry
-    pub twn_wld_1_2_b_exit: bool,
-
-    #[default = false]
-    /// Exit Beneath the Wall
-    pub dng_snw_3_4_a_exit: bool,
-
-    #[default = false]
-    /// Exit Ivory Ravine
-    pub dng_wld_3_2_exit: bool,
-
-    #[default = false]
-    /// Exit Conning Creek
-    pub twn_sea_2_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit New Delsta Flats
-    pub fld_cty_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Northern Ryu Sands
-    pub fld_dst_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Rifted Rock
-    pub dng_isd_3_1_c_exit: bool,
-
-    #[default = false]
-    /// Exit Forest Path
-    pub fld_fst_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Unfinished Tunnel
-    pub dng_wld_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Roque Island: Headquarters
-    pub twn_sea_3_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Abandoned Village
-    pub twn_cty_1_2_a_exit: bool,
-
-    #[default = false]
-    /// Exit Stormhail: Bridge
-    pub twn_snw_3_1_c_exit: bool,
-
-    #[default = false]
-    /// Exit Northern Conning Creek Coast
-    pub fld_sea_2_2_exit: bool,
-
-    #[default = false]
-    /// Exit Oresrush
-    pub twn_wld_1_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Dark Night
-    pub dng_fst_2_2_b_exit: bool,
-
-    #[default = false]
-    /// Exit Animal Trail
-    pub dng_fst_2_2_a_exit: bool,
-
-    #[default = false]
-    /// Exit Underground Laboratory
-    pub dng_mnt_2_3_exit: bool,
-
-    #[default = false]
-    /// Exit Tropu'hopu: Floating Theater
-    pub twn_isd_2_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Eastern Sai Sands
-    pub fld_dst_2_4_exit: bool,
-
-    #[default = false]
-    /// Exit The Roque Company: West Tower
-    pub dng_sea_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Road to Mother's Garden
-    pub fld_fst_3_1_exit: bool,
-
-    #[default = false]
-    /// Exit Tropu'hopu
-    pub twn_isd_2_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Mother's Garden
-    pub dng_fst_3_2_exit: bool,
-
-    #[default = false]
-    /// Exit Curious Nest
-    pub dng_ocn_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Lostseed Castle: Upper Level
-    pub dng_cty_3_2_b_exit: bool,
-
-    #[default = false]
-    /// Exit Flamechurch: Cathedral Entrance
-    pub twn_mnt_1_2_a_exit: bool,
-
-    #[default = false]
-    /// Exit Merry Hills
-    pub twn_mnt_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit The Roque Company: Factory
-    pub dng_cty_2_1_exit: bool,
-
-    #[default = false]
-    /// Exit Lair of the Usurper
-    pub dng_sea_1_3_exit: bool,
-
-    #[default = false]
-    /// Exit Western Merry Hills Pass
-    pub fld_mnt_3_2_exit: bool,
-
-    #[default = false]
-    /// Exit Seat of the Water Sprite
-    pub dng_mnt_2_2_exit: bool,
-
-    #[default = false]
-    /// Exit Southern Ku Sands
-    pub fld_dst_3_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Five-Tiered Tower
-    pub dng_dst_3_2_a_exit: bool,
-
-    #[default = false]
-    /// Exit Conning Creek: Harbor
-    pub twn_sea_2_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Western Montwise Pass
-    pub fld_mnt_2_1_exit: bool,
-
-    #[default = false]
-    /// Exit Giff's Manse
-    pub dng_wld_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Prison: Underground Passage
-    pub dng_snw_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Oresrush: Foundry
-    pub twn_wld_1_2_a_exit: bool,
-
-    #[default = false]
-    /// Exit Northern Montwise Pass
-    pub fld_mnt_3_1_exit: bool,
-
-    #[default = false]
-    /// Exit Sinking Ruins
-    pub dng_isd_2_1_exit: bool,
-
-    #[default = false]
-    /// Exit The Roque Company: East Tower
-    pub dng_sea_3_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Summit of Strife
-    pub dng_isd_3_2_a_exit: bool,
-
-    #[default = false]
-    /// Exit Healeaks
-    pub twn_cty_1_2_b_exit: bool,
-
-    #[default = false]
-    /// Exit Western Winterbloom Snows
-    pub fld_snw_2_2_exit: bool,
-
-    #[default = false]
-    /// Exit Beasting Village
-    pub twn_isd_1_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Southern Cropdale Trail
-    pub fld_fst_1_4_exit: bool,
-
-    #[default = false]
-    /// Exit Ruffians' Hideout
-    pub dng_snw_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Eastern Cape Cold Snows
-    pub fld_snw_1_3_exit: bool,
-
-    #[default = false]
-    /// Exit Clockbank
-    pub twn_cty_2_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Timberain Castle
-    pub dng_fst_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Canalbrine Bridge
-    pub fld_sea_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Five-Tiered Tower: Second Floor
-    pub dng_dst_3_2_b_exit: bool,
-
-    #[default = false]
-    /// Exit Southern Sai Sands
-    pub fld_dst_2_3_exit: bool,
-
-    #[default = false]
-    /// Exit Sacred Guard Ship
-    pub dng_sea_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Canalbrine: Path to the Water Source
-    pub fld_sea_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Ku: Castle Town
-    pub twn_dst_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Western Sai Sands
-    pub fld_dst_2_2_exit: bool,
-
-    #[default = false]
-    /// Exit On the Water
-    pub fld_ocn_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Abandoned Traverse
-    pub fld_mnt_3_3_exit: bool,
-
-    #[default = false]
-    /// Exit Vidania
-    pub fld_atl_3_1_exit: bool,
-
-    #[default = false]
-    /// Exit Flamechurch Pilgrims' Way
-    pub fld_mnt_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Merry Hills: Shrine Entrance
-    pub twn_mnt_3_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit New Delsta: Backstreets
-    pub twn_cty_1_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Wellgrove: Alrond's Estate
-    pub twn_fst_2_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Abandoned Waterway
-    pub dng_cty_1_3_exit: bool,
-
-    #[default = false]
-    /// Exit Roque Island
-    pub twn_sea_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Montwise: Underground Arena
-    pub twn_mnt_2_1_c_exit: bool,
-
-    #[default = false]
-    /// Exit Verdant Wood
-    pub dng_isd_3_2_b_exit: bool,
-
-    #[default = false]
-    /// Exit Frigit Isle: Mining Site
-    pub twn_snw_1_1_c_exit: bool,
-
-    #[default = false]
-    /// Exit Eastern Cropdale Trail
-    pub fld_fst_1_3_exit: bool,
-
-    #[default = false]
-    /// Exit Altar of the Prince of Thieves
-    pub dng_cty_2_job_exit: bool,
-
-    #[default = false]
-    /// Exit Cavern of Waves
-    pub dng_isd_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit New Delsta: Game Parlor
-    pub twn_cty_1_1_c_exit: bool,
-
-    #[default = false]
-    /// Exit Cavern of the Moon and Sun
-    pub dng_sea_2_3_exit: bool,
-
-    #[default = false]
-    /// Exit New Delsta
-    pub twn_cty_1_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Moonview Cliff
-    pub dng_isd_3_2_d_exit: bool,
-
-    #[default = false]
-    /// Exit Tranquil Grotto
-    pub dng_dst_3_1_exit: bool,
-
-    #[default = false]
-    /// Exit Sai: East District
-    pub twn_dst_2_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Sai
-    pub twn_dst_2_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Decaying Temple
-    pub dng_dst_2_3_exit: bool,
-
-    #[default = false]
-    /// Exit Lostseed
-    pub twn_cty_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Stormhail: Sacred Guard Headquarters
-    pub twn_snw_3_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Old Campsite
-    pub fld_dst_2_5_b_exit: bool,
+    /// Enter Abandoned Road
+    pub fld_wld_2_3_enter: bool,
 
     #[default = false]
     /// Exit Abandoned Road
     pub fld_wld_2_3_exit: bool,
 
     #[default = false]
-    /// Exit Frigit Isle: Yard
-    pub twn_snw_1_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Southern Timberain Trail
-    pub fld_fst_3_2_exit: bool,
-
-    #[default = false]
-    /// Exit Southern Stormhail Snows
-    pub fld_snw_3_1_exit: bool,
-
-    #[default = false]
-    /// Exit Secret Forest
-    pub dng_fst_2_1_exit: bool,
-
-    #[default = false]
-    /// Exit Dragonridge
-    pub dng_dst_2_1_exit: bool,
-
-    #[default = false]
-    /// Exit Beasting Bay: Anchorage
-    pub fld_isd_1_3_exit: bool,
-
-    #[default = false]
-    /// Exit Southern Crackridge Wilds
-    pub fld_wld_2_2_exit: bool,
-
-    #[default = false]
-    /// Exit Lostseed Castle
-    pub dng_cty_3_2_a_exit: bool,
-
-    #[default = false]
-    /// Exit Wandering Wood
-    pub dng_isd_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Forsaken Graveyard
-    pub dng_mnt_2_1_exit: bool,
-
-    #[default = false]
-    /// Exit Southern Oresrush Wilds
-    pub fld_wld_1_3_exit: bool,
-
-    #[default = false]
-    /// Exit Five-Tiered Tower: Top Floor
-    pub dng_dst_3_2_e_exit: bool,
-
-    #[default = false]
-    /// Exit Southern Nameless Village Traverse
-    pub fld_isd_3_3_exit: bool,
-
-    #[default = false]
-    /// Exit Winterbloom
-    pub twn_snw_2_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Timberain Castle: Roof
-    pub dng_fst_3_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Bed of the Titan
-    pub dng_wld_2_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Theater
-    pub dng_cty_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Ku: Castle Town
-    pub twn_dst_3_1_a_fire_exit: bool,
-
-    #[default = false]
-    /// Exit Gate of ㌀㌁㌂㌃㌄
-    pub dng_ocn_1_4_exit: bool,
-
-    #[default = false]
-    /// Exit Tombs of the Wardenbeasts
-    pub dng_isd_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Old Clock Tower
-    pub dng_cty_2_3_exit: bool,
-
-    #[default = false]
-    /// Exit Tropu'hopu: Shipyard
-    pub twn_isd_2_1_c_exit: bool,
-
-    #[default = false]
-    /// Exit Borderfall
-    pub fld_mnt_2_2_exit: bool,
-
-    #[default = false]
-    /// Exit Cropdale
-    pub twn_fst_1_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Mother's Garden: Orphanage
-    pub twn_fst_3_2_a_exit: bool,
-
-    #[default = false]
-    /// Exit Stormhail
-    pub twn_snw_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Sandflow Pass
-    pub fld_dst_2_5_a_exit: bool,
-
-    #[default = false]
-    /// Exit Altar of the Huntress
-    pub dng_isd_2_job_exit: bool,
-
-    #[default = false]
-    /// Exit Shrine of Ul'sterra
-    pub dng_mnt_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Clockbank: Industrial District
-    pub twn_cty_2_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit North Beasting Traverse
-    pub fld_isd_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Southern Clockbank Highroad
-    pub fld_cty_2_1_exit: bool,
-
-    #[default = false]
-    /// Exit Festival Grounds
-    pub fld_fst_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Altar of the Charitable
-    pub dng_sea_2_job_exit: bool,
-
-    #[default = false]
-    /// Exit House Wellows Manor
-    pub dng_fst_3_3_exit: bool,
-
-    #[default = false]
-    /// Exit Eastern New Delsta Highroad
-    pub fld_cty_1_3_exit: bool,
-
-    #[default = false]
-    /// Exit Ryu
-    pub twn_dst_1_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Southern Cape Cold Snows
-    pub fld_snw_1_2_exit: bool,
-
-    #[default = false]
-    /// Exit Duskruin Shrine
-    pub dng_wld_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Roque Island: Anchorage
-    pub fld_sea_3_1_exit: bool,
-
-    #[default = false]
-    /// Exit Stage of the Moon and Sun
-    pub dng_mnt_3_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Western Gravell Wilds
-    pub fld_wld_3_2_exit: bool,
-
-    #[default = false]
-    /// Exit Snowhares' Den
-    pub dng_snw_2_1_exit: bool,
-
-    #[default = false]
-    /// Exit Frigit Isle: Anchorage
-    pub fld_snw_1_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Gravell
-    pub twn_wld_3_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Mount Liphia
-    pub dng_cty_2_2_exit: bool,
-
-    #[default = false]
-    /// Exit Castle Ku: Entrance
-    pub twn_dst_3_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Timberain Castle: Town Square
-    pub twn_fst_3_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Montwise: Library
-    pub twn_mnt_2_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Northern Wellgrove Trail
-    pub fld_fst_2_1_exit: bool,
-
-    #[default = false]
-    /// Exit Path to Mount Liphia
-    pub fld_cty_2_2_exit: bool,
-
-    #[default = false]
-    /// Exit Cape Cold
-    pub twn_snw_1_2_a_exit: bool,
-
-    #[default = false]
-    /// Exit Wandering Wood
-    pub dng_isd_3_1_b_exit: bool,
-
-    #[default = false]
-    /// Exit Oresrush
-    pub twn_wld_1_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Flamechurch
-    pub twn_mnt_1_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Shipwreck of the Empress
-    pub dng_ocn_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Canalbrine: Water Source
-    pub dng_sea_1_1_exit: bool,
-
-    #[default = false]
-    /// Exit Crackridge
-    pub twn_wld_2_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Eastern Wellgrove Trail
-    pub fld_fst_2_2_exit: bool,
+    /// Enter Abandoned Silver Mine
+    pub fld_wld_1_1_b_enter: bool,
 
     #[default = false]
     /// Exit Abandoned Silver Mine
     pub fld_wld_1_1_b_exit: bool,
 
     #[default = false]
-    /// Exit Montwise
-    pub twn_mnt_2_1_a_exit: bool,
+    /// Enter Abandoned Traverse
+    pub fld_mnt_3_3_enter: bool,
 
     #[default = false]
-    /// Exit Wellgrove
-    pub twn_fst_2_1_a_exit: bool,
+    /// Exit Abandoned Traverse
+    pub fld_mnt_3_3_exit: bool,
 
     #[default = false]
-    /// Exit Quicksand Gaol
-    pub dng_dst_2_2_exit: bool,
+    /// Enter Abandoned Village
+    pub twn_cty_1_2_a_enter: bool,
 
     #[default = false]
-    /// Exit Oresrush
-    pub twn_wld_1_1_c_exit: bool,
+    /// Exit Abandoned Village
+    pub twn_cty_1_2_a_exit: bool,
 
     #[default = false]
-    /// Exit Forbidden Shrine
-    pub dng_snw_3_1_exit: bool,
+    /// Enter Abandoned Waterway
+    pub dng_cty_1_3_enter: bool,
 
     #[default = false]
-    /// Exit Frigit Isle: Entrance
-    pub fld_snw_1_1_a_exit: bool,
+    /// Exit Abandoned Waterway
+    pub dng_cty_1_3_exit: bool,
 
     #[default = false]
-    /// Exit Altar of the Thunderblade
-    pub dng_dst_2_job_exit: bool,
-
-    #[default = false]
-    /// Exit Underground Waterway
-    pub dng_cty_3_1_exit: bool,
-
-    #[default = false]
-    /// Exit Silver Mine
-    pub fld_wld_1_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Frigit Isle: Prison
-    pub twn_snw_1_1_a_exit: bool,
-
-    #[default = false]
-    /// Exit Five-Tiered Tower: Fourth Floor
-    pub dng_dst_3_2_d_exit: bool,
+    /// Enter Abyssal Beach
+    pub dng_isd_3_2_e_enter: bool,
 
     #[default = false]
     /// Exit Abyssal Beach
     pub dng_isd_3_2_e_exit: bool,
 
     #[default = false]
-    /// Exit The Lost Isle
-    pub fld_ocn_1_3_exit: bool,
+    /// Enter Altar of the Charitable
+    pub dng_sea_2_job_enter: bool,
 
     #[default = false]
-    /// Exit Eastern Flamechurch Pass
-    pub fld_mnt_1_2_exit: bool,
+    /// Exit Altar of the Charitable
+    pub dng_sea_2_job_exit: bool,
 
     #[default = false]
-    /// Exit Timberain
-    pub twn_fst_3_1_a_exit: bool,
+    /// Enter Altar of the Flamebringer
+    pub dng_mnt_2_job_enter: bool,
 
     #[default = false]
-    /// Exit Western Crackridge Wilds
-    pub fld_wld_2_1_exit: bool,
+    /// Exit Altar of the Flamebringer
+    pub dng_mnt_2_job_exit: bool,
 
     #[default = false]
-    /// Exit Castle Ku
-    pub twn_dst_3_1_c_exit: bool,
+    /// Enter Altar of the Huntress
+    pub dng_isd_2_job_enter: bool,
 
     #[default = false]
-    /// Exit Western Conning Creek Coast
-    pub fld_sea_2_3_exit: bool,
+    /// Exit Altar of the Huntress
+    pub dng_isd_2_job_exit: bool,
 
     #[default = false]
-    /// Exit Infernal Castle
-    pub dng_snw_3_4_b_exit: bool,
+    /// Enter Altar of the Lady of Grace
+    pub dng_fst_2_job_enter: bool,
 
     #[default = false]
-    /// Exit Castle Mei: Gallows
-    pub dng_snw_3_2_b_exit: bool,
+    /// Exit Altar of the Lady of Grace
+    pub dng_fst_2_job_exit: bool,
 
     #[default = false]
-    /// Exit Path to the Duskruin Shrine
-    pub fld_wld_3_1_exit: bool,
+    /// Enter Altar of the Prince of Thieves
+    pub dng_cty_2_job_enter: bool,
 
     #[default = false]
-    /// Exit Lighthouse Island
-    pub fld_ocn_1_2_exit: bool,
+    /// Exit Altar of the Prince of Thieves
+    pub dng_cty_2_job_exit: bool,
 
     #[default = false]
-    /// Exit Guard Outpost
-    pub dng_sea_2_2_exit: bool,
+    /// Enter Altar of the Scholarking
+    pub dng_snw_2_job_enter: bool,
+
+    #[default = false]
+    /// Exit Altar of the Scholarking
+    pub dng_snw_2_job_exit: bool,
+
+    #[default = false]
+    /// Enter Altar of the Thunderblade
+    pub dng_dst_2_job_enter: bool,
+
+    #[default = false]
+    /// Exit Altar of the Thunderblade
+    pub dng_dst_2_job_exit: bool,
+
+    #[default = false]
+    /// Enter Altar of the Trader
+    pub dng_wld_2_job_enter: bool,
+
+    #[default = false]
+    /// Exit Altar of the Trader
+    pub dng_wld_2_job_exit: bool,
+
+    #[default = false]
+    /// Enter Animal Trail
+    pub dng_fst_2_2_a_enter: bool,
+
+    #[default = false]
+    /// Exit Animal Trail
+    pub dng_fst_2_2_a_exit: bool,
+
+    #[default = false]
+    /// Enter Battlefield
+    pub fld_dst_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Battlefield
+    pub fld_dst_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Beasting Bay: Anchorage
+    pub fld_isd_1_3_enter: bool,
+
+    #[default = false]
+    /// Exit Beasting Bay: Anchorage
+    pub fld_isd_1_3_exit: bool,
+
+    #[default = false]
+    /// Enter Beasting Village
+    pub twn_isd_1_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Beasting Village
+    pub twn_isd_1_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Bed of the Titan
+    pub dng_wld_2_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Bed of the Titan
+    pub dng_wld_2_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Beneath the Wall
+    pub dng_snw_3_4_a_enter: bool,
+
+    #[default = false]
+    /// Exit Beneath the Wall
+    pub dng_snw_3_4_a_exit: bool,
+
+    #[default = false]
+    /// Enter Borderfall
+    pub fld_mnt_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Borderfall
+    pub fld_mnt_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Canalbrine
+    pub twn_sea_1_1_a_enter: bool,
 
     #[default = false]
     /// Exit Canalbrine
     pub twn_sea_1_1_a_exit: bool,
 
     #[default = false]
+    /// Enter Canalbrine Bridge
+    pub fld_sea_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Canalbrine Bridge
+    pub fld_sea_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Canalbrine: Path to the Water Source
+    pub fld_sea_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Canalbrine: Path to the Water Source
+    pub fld_sea_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Canalbrine: Water Source
+    pub dng_sea_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Canalbrine: Water Source
+    pub dng_sea_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Cape Cold
+    pub twn_snw_1_2_a_enter: bool,
+
+    #[default = false]
+    /// Exit Cape Cold
+    pub twn_snw_1_2_a_exit: bool,
+
+    #[default = false]
+    /// Enter Castle Ku
+    pub twn_dst_3_1_c_enter: bool,
+
+    #[default = false]
+    /// Exit Castle Ku
+    pub twn_dst_3_1_c_exit: bool,
+
+    #[default = false]
+    /// Enter Castle Ku: Entrance
+    pub twn_dst_3_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Castle Ku: Entrance
+    pub twn_dst_3_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Castle Mei: East Tower
+    pub dng_snw_3_2_a_enter: bool,
+
+    #[default = false]
+    /// Exit Castle Mei: East Tower
+    pub dng_snw_3_2_a_exit: bool,
+
+    #[default = false]
+    /// Enter Castle Mei: Gallows
+    pub dng_snw_3_2_b_enter: bool,
+
+    #[default = false]
+    /// Exit Castle Mei: Gallows
+    pub dng_snw_3_2_b_exit: bool,
+
+    #[default = false]
+    /// Enter Castle Vidania
+    pub dng_atl_3_1_enter: bool,
+
+    #[default = false]
+    /// Exit Castle Vidania
+    pub dng_atl_3_1_exit: bool,
+
+    #[default = false]
+    /// Enter Cathedral Cellars
+    pub dng_mnt_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Cathedral Cellars
+    pub dng_mnt_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Cavern of the Moon and Sun
+    pub dng_sea_2_3_enter: bool,
+
+    #[default = false]
+    /// Exit Cavern of the Moon and Sun
+    pub dng_sea_2_3_exit: bool,
+
+    #[default = false]
+    /// Enter Cavern of the Sea God
+    pub dng_sea_2_1_enter: bool,
+
+    #[default = false]
     /// Exit Cavern of the Sea God
     pub dng_sea_2_1_exit: bool,
 
     #[default = false]
-    /// Exit Altar of the Flamebringer
-    pub dng_mnt_2_job_exit: bool,
+    /// Enter Cavern of Waves
+    pub dng_isd_1_2_enter: bool,
 
+    #[default = false]
+    /// Exit Cavern of Waves
+    pub dng_isd_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Clockbank
+    pub twn_cty_2_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Clockbank
+    pub twn_cty_2_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Clockbank: Industrial District
+    pub twn_cty_2_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Clockbank: Industrial District
+    pub twn_cty_2_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Conning Creek
+    pub twn_sea_2_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Conning Creek
+    pub twn_sea_2_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Conning Creek: Harbor
+    pub twn_sea_2_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Conning Creek: Harbor
+    pub twn_sea_2_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Conning Creek: Outskirts
+    pub twn_sea_2_1_c_enter: bool,
+
+    #[default = false]
+    /// Exit Conning Creek: Outskirts
+    pub twn_sea_2_1_c_exit: bool,
+
+    #[default = false]
+    /// Enter Crackridge
+    pub twn_wld_2_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Crackridge
+    pub twn_wld_2_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Crackridge Harbor: Anchorage
+    pub fld_wld_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Crackridge Harbor: Anchorage
+    pub fld_wld_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Cropdale
+    pub twn_fst_1_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Cropdale
+    pub twn_fst_1_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Curious Nest
+    pub dng_ocn_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Curious Nest
+    pub dng_ocn_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Dark Night
+    pub dng_fst_2_2_b_enter: bool,
+
+    #[default = false]
+    /// Exit Dark Night
+    pub dng_fst_2_2_b_exit: bool,
+
+    #[default = false]
+    /// Enter Decaying Temple
+    pub dng_dst_2_3_enter: bool,
+
+    #[default = false]
+    /// Exit Decaying Temple
+    pub dng_dst_2_3_exit: bool,
+
+    #[default = false]
+    /// Enter Deserted Highroad
+    pub fld_cty_3_1_enter: bool,
+
+    #[default = false]
+    /// Exit Deserted Highroad
+    pub fld_cty_3_1_exit: bool,
+
+    #[default = false]
+    /// Enter Diamante's Estate
+    pub dng_cty_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Diamante's Estate
+    pub dng_cty_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Dragonridge
+    pub dng_dst_2_1_enter: bool,
+
+    #[default = false]
+    /// Exit Dragonridge
+    pub dng_dst_2_1_exit: bool,
+
+    #[default = false]
+    /// Enter Duskruin Shrine
+    pub dng_wld_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Duskruin Shrine
+    pub dng_wld_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Duskruin Shrine: Depths
+    pub dng_wld_3_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Duskruin Shrine: Depths
+    pub dng_wld_3_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Eastern Cape Cold Snows
+    pub fld_snw_1_3_enter: bool,
+
+    #[default = false]
+    /// Exit Eastern Cape Cold Snows
+    pub fld_snw_1_3_exit: bool,
+
+    #[default = false]
+    /// Enter Eastern Cropdale Trail
+    pub fld_fst_1_3_enter: bool,
+
+    #[default = false]
+    /// Exit Eastern Cropdale Trail
+    pub fld_fst_1_3_exit: bool,
+
+    #[default = false]
+    /// Enter Eastern Flamechurch Pass
+    pub fld_mnt_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Eastern Flamechurch Pass
+    pub fld_mnt_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Eastern Ku Sands
+    pub fld_dst_3_2_enter: bool,
+
+    #[default = false]
+    /// Exit Eastern Ku Sands
+    pub fld_dst_3_2_exit: bool,
+
+    #[default = false]
+    /// Enter Eastern New Delsta Highroad
+    pub fld_cty_1_3_enter: bool,
+
+    #[default = false]
+    /// Exit Eastern New Delsta Highroad
+    pub fld_cty_1_3_exit: bool,
+
+    #[default = false]
+    /// Enter Eastern Sai Sands
+    pub fld_dst_2_4_enter: bool,
+
+    #[default = false]
+    /// Exit Eastern Sai Sands
+    pub fld_dst_2_4_exit: bool,
+
+    #[default = false]
+    /// Enter Eastern Wellgrove Trail
+    pub fld_fst_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Eastern Wellgrove Trail
+    pub fld_fst_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Fellsun Ruins
+    pub dng_wld_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Fellsun Ruins
+    pub dng_wld_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Festival Grounds
+    pub fld_fst_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Festival Grounds
+    pub fld_fst_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Five-Tiered Tower
+    pub dng_dst_3_2_a_enter: bool,
+
+    #[default = false]
+    /// Exit Five-Tiered Tower
+    pub dng_dst_3_2_a_exit: bool,
+
+    #[default = false]
+    /// Enter Five-Tiered Tower: Fourth Floor
+    pub dng_dst_3_2_d_enter: bool,
+
+    #[default = false]
+    /// Exit Five-Tiered Tower: Fourth Floor
+    pub dng_dst_3_2_d_exit: bool,
+
+    #[default = false]
+    /// Enter Five-Tiered Tower: Second Floor
+    pub dng_dst_3_2_b_enter: bool,
+
+    #[default = false]
+    /// Exit Five-Tiered Tower: Second Floor
+    pub dng_dst_3_2_b_exit: bool,
+
+    #[default = false]
+    /// Enter Five-Tiered Tower: Third Floor
+    pub dng_dst_3_2_c_enter: bool,
+
+    #[default = false]
+    /// Exit Five-Tiered Tower: Third Floor
+    pub dng_dst_3_2_c_exit: bool,
+
+    #[default = false]
+    /// Enter Five-Tiered Tower: Top Floor
+    pub dng_dst_3_2_e_enter: bool,
+
+    #[default = false]
+    /// Exit Five-Tiered Tower: Top Floor
+    pub dng_dst_3_2_e_exit: bool,
+
+    #[default = false]
+    /// Enter Flamechurch
+    pub twn_mnt_1_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Flamechurch
+    pub twn_mnt_1_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Flamechurch Pilgrims' Way
+    pub fld_mnt_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Flamechurch Pilgrims' Way
+    pub fld_mnt_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Flamechurch: Cathedral
+    pub twn_mnt_1_2_b_enter: bool,
+
+    #[default = false]
+    /// Exit Flamechurch: Cathedral
+    pub twn_mnt_1_2_b_exit: bool,
+
+    #[default = false]
+    /// Enter Flamechurch: Cathedral Entrance
+    pub twn_mnt_1_2_a_enter: bool,
+
+    #[default = false]
+    /// Exit Flamechurch: Cathedral Entrance
+    pub twn_mnt_1_2_a_exit: bool,
+
+    #[default = false]
+    /// Enter Forbidden Shrine
+    pub dng_snw_3_1_enter: bool,
+
+    #[default = false]
+    /// Exit Forbidden Shrine
+    pub dng_snw_3_1_exit: bool,
+
+    #[default = false]
+    /// Enter Forest Path
+    pub fld_fst_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Forest Path
+    pub fld_fst_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Forsaken Graveyard
+    pub dng_mnt_2_1_enter: bool,
+
+    #[default = false]
+    /// Exit Forsaken Graveyard
+    pub dng_mnt_2_1_exit: bool,
+
+    #[default = false]
+    /// Enter Frigit Isle: Anchorage
+    pub fld_snw_1_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Frigit Isle: Anchorage
+    pub fld_snw_1_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Frigit Isle: Entrance
+    pub fld_snw_1_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Frigit Isle: Entrance
+    pub fld_snw_1_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Frigit Isle: Mining Site
+    pub twn_snw_1_1_c_enter: bool,
+
+    #[default = false]
+    /// Exit Frigit Isle: Mining Site
+    pub twn_snw_1_1_c_exit: bool,
+
+    #[default = false]
+    /// Enter Frigit Isle: Prison
+    pub twn_snw_1_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Frigit Isle: Prison
+    pub twn_snw_1_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Frigit Isle: Yard
+    pub twn_snw_1_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Frigit Isle: Yard
+    pub twn_snw_1_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Gate of ㌀㌁㌂㌃㌄
+    pub dng_ocn_1_4_enter: bool,
+
+    #[default = false]
+    /// Exit Gate of ㌀㌁㌂㌃㌄
+    pub dng_ocn_1_4_exit: bool,
+
+    #[default = false]
+    /// Enter Giff's Manse
+    pub dng_wld_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Giff's Manse
+    pub dng_wld_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Gravell
+    pub twn_wld_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Gravell
+    pub twn_wld_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Guard Outpost
+    pub dng_sea_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Guard Outpost
+    pub dng_sea_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Healeaks
+    pub twn_cty_1_2_b_enter: bool,
+
+    #[default = false]
+    /// Exit Healeaks
+    pub twn_cty_1_2_b_exit: bool,
+
+    #[default = false]
+    /// Enter House Wellows Manor
+    pub dng_fst_3_3_enter: bool,
+
+    #[default = false]
+    /// Exit House Wellows Manor
+    pub dng_fst_3_3_exit: bool,
+
+    #[default = false]
+    /// Enter Infernal Castle
+    pub dng_snw_3_4_b_enter: bool,
+
+    #[default = false]
+    /// Exit Infernal Castle
+    pub dng_snw_3_4_b_exit: bool,
+
+    #[default = false]
+    /// Enter Ivory Ravine
+    pub dng_wld_3_2_enter: bool,
+
+    #[default = false]
+    /// Exit Ivory Ravine
+    pub dng_wld_3_2_exit: bool,
+
+    #[default = false]
+    /// Enter Ku: Castle Town
+    pub twn_dst_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Enter Ku: Castle Town
+    pub twn_dst_3_1_a_fire_enter: bool,
+
+    #[default = false]
+    /// Exit Ku: Castle Town
+    pub twn_dst_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Exit Ku: Castle Town
+    pub twn_dst_3_1_a_fire_exit: bool,
+
+    #[default = false]
+    /// Enter Lair of the Usurper
+    pub dng_sea_1_3_enter: bool,
+
+    #[default = false]
+    /// Exit Lair of the Usurper
+    pub dng_sea_1_3_exit: bool,
+
+    #[default = false]
+    /// Enter Lighthouse Island
+    pub fld_ocn_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Lighthouse Island
+    pub fld_ocn_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Lostseed
+    pub twn_cty_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Lostseed
+    pub twn_cty_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Lostseed Castle
+    pub dng_cty_3_2_a_enter: bool,
+
+    #[default = false]
+    /// Exit Lostseed Castle
+    pub dng_cty_3_2_a_exit: bool,
+
+    #[default = false]
+    /// Enter Lostseed Castle: Upper Level
+    pub dng_cty_3_2_b_enter: bool,
+
+    #[default = false]
+    /// Exit Lostseed Castle: Upper Level
+    pub dng_cty_3_2_b_exit: bool,
+
+    #[default = false]
+    /// Enter Merry Hills
+    pub twn_mnt_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Merry Hills
+    pub twn_mnt_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Merry Hills: Shrine Entrance
+    pub twn_mnt_3_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Merry Hills: Shrine Entrance
+    pub twn_mnt_3_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Montwise
+    pub twn_mnt_2_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Montwise
+    pub twn_mnt_2_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Montwise: Library
+    pub twn_mnt_2_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Montwise: Library
+    pub twn_mnt_2_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Montwise: Underground Arena
+    pub twn_mnt_2_1_c_enter: bool,
+
+    #[default = false]
+    /// Exit Montwise: Underground Arena
+    pub twn_mnt_2_1_c_exit: bool,
+
+    #[default = false]
+    /// Enter Moonview Cliff
+    pub dng_isd_3_2_d_enter: bool,
+
+    #[default = false]
+    /// Exit Moonview Cliff
+    pub dng_isd_3_2_d_exit: bool,
+
+    #[default = false]
+    /// Enter Mother's Garden
+    pub dng_fst_3_2_enter: bool,
+
+    #[default = false]
+    /// Exit Mother's Garden
+    pub dng_fst_3_2_exit: bool,
+
+    #[default = false]
+    /// Enter Mother's Garden: Orphanage
+    pub twn_fst_3_2_a_enter: bool,
+
+    #[default = false]
+    /// Exit Mother's Garden: Orphanage
+    pub twn_fst_3_2_a_exit: bool,
+
+    #[default = false]
+    /// Enter Mount Liphia
+    pub dng_cty_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Mount Liphia
+    pub dng_cty_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Nameless Isle
+    pub dng_ocn_1_3_enter: bool,
+
+    #[default = false]
+    /// Exit Nameless Isle
+    pub dng_ocn_1_3_exit: bool,
+
+    #[default = false]
+    /// Enter Nameless Village
+    pub twn_isd_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Nameless Village
+    pub twn_isd_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter New Delsta
+    pub twn_cty_1_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit New Delsta
+    pub twn_cty_1_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter New Delsta Flats
+    pub fld_cty_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit New Delsta Flats
+    pub fld_cty_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter New Delsta Harbor: Anchorage
+    pub fld_cty_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit New Delsta Harbor: Anchorage
+    pub fld_cty_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter New Delsta: Backstreets
+    pub twn_cty_1_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit New Delsta: Backstreets
+    pub twn_cty_1_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter New Delsta: Game Parlor
+    pub twn_cty_1_1_c_enter: bool,
+
+    #[default = false]
+    /// Exit New Delsta: Game Parlor
+    pub twn_cty_1_1_c_exit: bool,
+
+    #[default = false]
+    /// Enter North Beasting Traverse
+    pub fld_isd_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit North Beasting Traverse
+    pub fld_isd_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Northern Conning Creek Coast
+    pub fld_sea_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Northern Conning Creek Coast
+    pub fld_sea_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Northern Montwise Pass
+    pub fld_mnt_3_1_enter: bool,
+
+    #[default = false]
+    /// Exit Northern Montwise Pass
+    pub fld_mnt_3_1_exit: bool,
+
+    #[default = false]
+    /// Enter Northern Ryu Sands
+    pub fld_dst_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Northern Ryu Sands
+    pub fld_dst_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Northern Wellgrove Trail
+    pub fld_fst_2_1_enter: bool,
+
+    #[default = false]
+    /// Exit Northern Wellgrove Trail
+    pub fld_fst_2_1_exit: bool,
+
+    #[default = false]
+    /// Enter Ocean ???
+    pub fld_ocn_1_4_enter: bool,
+    #[default = false]
+    /// Exit Ocean ???
+    pub fld_ocn_1_4_exit: bool,
+    #[default = false]
+    /// Enter Old Campsite
+    pub fld_dst_2_5_b_enter: bool,
+
+    #[default = false]
+    /// Exit Old Campsite
+    pub fld_dst_2_5_b_exit: bool,
+
+    #[default = false]
+    /// Enter Old Clock Tower
+    pub dng_cty_2_3_enter: bool,
+
+    #[default = false]
+    /// Exit Old Clock Tower
+    pub dng_cty_2_3_exit: bool,
+
+    #[default = false]
+    /// Enter On the Water
+    pub fld_ocn_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit On the Water
+    pub fld_ocn_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Oresrush A
+    pub twn_wld_1_1_a_enter: bool,
+
+    #[default = false]
+    /// Enter Oresrush B
+    pub twn_wld_1_1_b_enter: bool,
+
+    #[default = false]
+    /// Enter Oresrush C
+    pub twn_wld_1_1_c_enter: bool,
+
+    #[default = false]
+    /// Exit Oresrush A
+    pub twn_wld_1_1_a_exit: bool,
+
+    #[default = false]
+    /// Exit Oresrush B
+    pub twn_wld_1_1_b_exit: bool,
+
+    #[default = false]
+    /// Exit Oresrush C
+    pub twn_wld_1_1_c_exit: bool,
+
+    #[default = false]
+    /// Enter Oresrush: Foundry
+    pub twn_wld_1_2_b_enter: bool,
+
+    #[default = false]
+    /// Enter Oresrush: Foundry
+    pub twn_wld_1_2_a_enter: bool,
+
+    #[default = false]
+    /// Exit Oresrush: Foundry
+    pub twn_wld_1_2_b_exit: bool,
+
+    #[default = false]
+    /// Exit Oresrush: Foundry
+    pub twn_wld_1_2_a_exit: bool,
+
+    #[default = false]
+    /// Enter Path to Mount Liphia
+    pub fld_cty_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Path to Mount Liphia
+    pub fld_cty_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Path to the Bed of the Titan
+    pub dng_wld_2_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Path to the Bed of the Titan
+    pub dng_wld_2_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Path to the Duskruin Shrine
+    pub fld_wld_3_1_enter: bool,
+
+    #[default = false]
+    /// Exit Path to the Duskruin Shrine
+    pub fld_wld_3_1_exit: bool,
+
+    #[default = false]
+    /// Enter Path to the Tombs of the Wardenbeasts
+    pub fld_isd_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Path to the Tombs of the Wardenbeasts
+    pub fld_isd_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Prison: Underground Passage
+    pub dng_snw_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Prison: Underground Passage
+    pub dng_snw_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Quicksand Gaol
+    pub dng_dst_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Quicksand Gaol
+    pub dng_dst_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Rifted Rock
+    pub dng_isd_3_1_c_enter: bool,
+
+    #[default = false]
+    /// Exit Rifted Rock
+    pub dng_isd_3_1_c_exit: bool,
+
+    #[default = false]
+    /// Enter Road to Mother's Garden
+    pub fld_fst_3_1_enter: bool,
+
+    #[default = false]
+    /// Exit Road to Mother's Garden
+    pub fld_fst_3_1_exit: bool,
+
+    #[default = false]
+    /// Enter Roque Island
+    pub twn_sea_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Roque Island
+    pub twn_sea_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Roque Island: Anchorage
+    pub fld_sea_3_1_enter: bool,
+
+    #[default = false]
+    /// Exit Roque Island: Anchorage
+    pub fld_sea_3_1_exit: bool,
+
+    #[default = false]
+    /// Enter Roque Island: Headquarters
+    pub twn_sea_3_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Roque Island: Headquarters
+    pub twn_sea_3_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Ruffians' Hideout
+    pub dng_snw_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Ruffians' Hideout
+    pub dng_snw_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Ryu
+    pub twn_dst_1_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Ryu
+    pub twn_dst_1_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Sacred Guard Ship
+    pub dng_sea_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Sacred Guard Ship
+    pub dng_sea_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Sacred Peak Altahe
+    pub dng_snw_3_3_enter: bool,
+
+    #[default = false]
+    /// Exit Sacred Peak Altahe
+    pub dng_snw_3_3_exit: bool,
+
+    #[default = false]
+    /// Enter Sai
+    pub twn_dst_2_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Sai
+    pub twn_dst_2_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Sai: East District
+    pub twn_dst_2_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Sai: East District
+    pub twn_dst_2_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Sand Lion's Den
+    pub dng_dst_2_4_enter: bool,
+
+    #[default = false]
+    /// Exit Sand Lion's Den
+    pub dng_dst_2_4_exit: bool,
+
+    #[default = false]
+    /// Enter Sandflow Pass
+    pub fld_dst_2_5_a_enter: bool,
+
+    #[default = false]
+    /// Exit Sandflow Pass
+    pub fld_dst_2_5_a_exit: bool,
+
+    #[default = false]
+    /// Enter Seat of the Water Sprite
+    pub dng_mnt_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Seat of the Water Sprite
+    pub dng_mnt_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Secret Forest
+    pub dng_fst_2_1_enter: bool,
+
+    #[default = false]
+    /// Exit Secret Forest
+    pub dng_fst_2_1_exit: bool,
+
+    #[default = false]
+    /// Enter Shipwreck of the Empress
+    pub dng_ocn_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Shipwreck of the Empress
+    pub dng_ocn_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Shrine of Ul'sterra
+    pub dng_mnt_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Shrine of Ul'sterra
+    pub dng_mnt_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Silver Mine
+    pub fld_wld_1_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Silver Mine
+    pub fld_wld_1_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Sinking Ruins
+    pub dng_isd_2_1_enter: bool,
+
+    #[default = false]
+    /// Exit Sinking Ruins
+    pub dng_isd_2_1_exit: bool,
+
+    #[default = false]
+    /// Enter Snowhares' Den
+    pub dng_snw_2_1_enter: bool,
+
+    #[default = false]
+    /// Exit Snowhares' Den
+    pub dng_snw_2_1_exit: bool,
+
+    #[default = false]
+    /// Enter Southern Cape Cold Snows
+    pub fld_snw_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Southern Cape Cold Snows
+    pub fld_snw_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Southern Clockbank Highroad
+    pub fld_cty_2_1_enter: bool,
+
+    #[default = false]
+    /// Exit Southern Clockbank Highroad
+    pub fld_cty_2_1_exit: bool,
+
+    #[default = false]
+    /// Enter Southern Crackridge Wilds
+    pub fld_wld_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Southern Crackridge Wilds
+    pub fld_wld_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Southern Cropdale Trail
+    pub fld_fst_1_4_enter: bool,
+
+    #[default = false]
+    /// Exit Southern Cropdale Trail
+    pub fld_fst_1_4_exit: bool,
+
+    #[default = false]
+    /// Enter Southern Ku Sands
+    pub fld_dst_3_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Southern Ku Sands
+    pub fld_dst_3_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Southern Nameless Village Traverse
+    pub fld_isd_3_3_enter: bool,
+
+    #[default = false]
+    /// Exit Southern Nameless Village Traverse
+    pub fld_isd_3_3_exit: bool,
+
+    #[default = false]
+    /// Enter Southern Oresrush Wilds
+    pub fld_wld_1_3_enter: bool,
+
+    #[default = false]
+    /// Exit Southern Oresrush Wilds
+    pub fld_wld_1_3_exit: bool,
+
+    #[default = false]
+    /// Enter Southern Sai Sands
+    pub fld_dst_2_3_enter: bool,
+
+    #[default = false]
+    /// Exit Southern Sai Sands
+    pub fld_dst_2_3_exit: bool,
+
+    #[default = false]
+    /// Enter Southern Stormhail Snows
+    pub fld_snw_3_1_enter: bool,
+
+    #[default = false]
+    /// Exit Southern Stormhail Snows
+    pub fld_snw_3_1_exit: bool,
+
+    #[default = false]
+    /// Enter Southern Timberain Trail
+    pub fld_fst_3_2_enter: bool,
+
+    #[default = false]
+    /// Exit Southern Timberain Trail
+    pub fld_fst_3_2_exit: bool,
+
+    #[default = false]
+    /// Enter Stage of the Moon and Sun
+    pub dng_mnt_3_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Stage of the Moon and Sun
+    pub dng_mnt_3_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Starfall Spring
+    pub dng_fst_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Starfall Spring
+    pub dng_fst_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Stormhail
+    pub twn_snw_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Stormhail
+    pub twn_snw_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Stormhail: Bridge
+    pub twn_snw_3_1_c_enter: bool,
+
+    #[default = false]
+    /// Exit Stormhail: Bridge
+    pub twn_snw_3_1_c_exit: bool,
+
+    #[default = false]
+    /// Enter Stormhail: Castle Mei
+    pub twn_snw_3_2_a_enter: bool,
+
+    #[default = false]
+    /// Exit Stormhail: Castle Mei
+    pub twn_snw_3_2_a_exit: bool,
+
+    #[default = false]
+    /// Enter Stormhail: Sacred Guard Headquarters
+    pub twn_snw_3_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Stormhail: Sacred Guard Headquarters
+    pub twn_snw_3_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Stormy Cape
+    pub dng_isd_3_2_c_enter: bool,
+
+    #[default = false]
+    /// Exit Stormy Cape
+    pub dng_isd_3_2_c_exit: bool,
+
+    #[default = false]
+    /// Enter Summit of Strife
+    pub dng_isd_3_2_a_enter: bool,
+
+    #[default = false]
+    /// Exit Summit of Strife
+    pub dng_isd_3_2_a_exit: bool,
+
+    #[default = false]
+    /// Enter Sunken Maw
+    pub dng_cty_1_4_enter: bool,
+
+    #[default = false]
+    /// Exit Sunken Maw
+    pub dng_cty_1_4_exit: bool,
+
+    #[default = false]
+    /// Enter The Lost Isle
+    pub fld_ocn_1_3_enter: bool,
+
+    #[default = false]
+    /// Exit The Lost Isle
+    pub fld_ocn_1_3_exit: bool,
+
+    #[default = false]
+    /// Enter The Roque Company: East Tower
+    pub dng_sea_3_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit The Roque Company: East Tower
+    pub dng_sea_3_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter The Roque Company: Factory
+    pub dng_cty_2_1_enter: bool,
+
+    #[default = false]
+    /// Exit The Roque Company: Factory
+    pub dng_cty_2_1_exit: bool,
+
+    #[default = false]
+    /// Enter The Roque Company: West Tower
+    pub dng_sea_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit The Roque Company: West Tower
+    pub dng_sea_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Theater
+    pub dng_cty_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Theater
+    pub dng_cty_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter Timberain
+    pub twn_fst_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Timberain
+    pub twn_fst_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Timberain Castle
+    pub dng_fst_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Timberain Castle
+    pub dng_fst_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Timberain Castle: Roof
+    pub dng_fst_3_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Timberain Castle: Roof
+    pub dng_fst_3_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Timberain Castle: Town Square
+    pub twn_fst_3_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Timberain Castle: Town Square
+    pub twn_fst_3_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Tombs of the Wardenbeasts
+    pub dng_isd_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Tombs of the Wardenbeasts
+    pub dng_isd_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Tranquil Grotto
+    pub dng_dst_3_1_enter: bool,
+
+    #[default = false]
+    /// Exit Tranquil Grotto
+    pub dng_dst_3_1_exit: bool,
+
+    #[default = false]
+    /// Enter Tropu'hopu
+    pub twn_isd_2_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Tropu'hopu
+    pub twn_isd_2_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Tropu'hopu: Floating Theater
+    pub twn_isd_2_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Tropu'hopu: Floating Theater
+    pub twn_isd_2_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Tropu'hopu: Shipyard
+    pub twn_isd_2_1_c_enter: bool,
+
+    #[default = false]
+    /// Exit Tropu'hopu: Shipyard
+    pub twn_isd_2_1_c_exit: bool,
+
+    #[default = false]
+    /// Enter Underground Laboratory
+    pub dng_mnt_2_3_enter: bool,
+
+    #[default = false]
+    /// Exit Underground Laboratory
+    pub dng_mnt_2_3_exit: bool,
+
+    #[default = false]
+    /// Enter Underground Waterway
+    pub dng_cty_3_1_enter: bool,
+
+    #[default = false]
+    /// Exit Underground Waterway
+    pub dng_cty_3_1_exit: bool,
+
+    #[default = false]
+    /// Enter Unfinished Tunnel
+    pub dng_wld_1_2_enter: bool,
+
+    #[default = false]
+    /// Exit Unfinished Tunnel
+    pub dng_wld_1_2_exit: bool,
+
+    #[default = false]
+    /// Enter unknown
+    pub evt_end_30_001_enter: bool,
+
+    #[default = false]
+    /// Enter Veil of Trees
+    pub dng_fst_1_1_enter: bool,
+
+    #[default = false]
+    /// Exit Veil of Trees
+    pub dng_fst_1_1_exit: bool,
+
+    #[default = false]
+    /// Enter Verdant Wood
+    pub dng_isd_3_2_b_enter: bool,
+
+    #[default = false]
+    /// Exit Verdant Wood
+    pub dng_isd_3_2_b_exit: bool,
+
+    #[default = false]
+    /// Enter Vidania
+    pub fld_atl_3_1_enter: bool,
+
+    #[default = false]
+    /// Exit Vidania
+    pub fld_atl_3_1_exit: bool,
+
+    #[default = false]
+    /// Enter Wandering Wood
+    pub dng_isd_3_1_a_enter: bool,
+
+    #[default = false]
+    /// Enter Wandering Wood
+    pub dng_isd_3_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Wandering Wood
+    pub dng_isd_3_1_a_exit: bool,
+
+    #[default = false]
+    /// Exit Wandering Wood
+    pub dng_isd_3_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Wellgrove
+    pub twn_fst_2_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Wellgrove
+    pub twn_fst_2_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Wellgrove: Alrond's Estate
+    pub twn_fst_2_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Wellgrove: Alrond's Estate
+    pub twn_fst_2_1_b_exit: bool,
+
+    #[default = false]
+    /// Enter Western Canalbrine Coast
+    pub fld_sea_1_3_enter: bool,
+
+    #[default = false]
+    /// Exit Western Canalbrine Coast
+    pub fld_sea_1_3_exit: bool,
+
+    #[default = false]
+    /// Enter Western Clockbank Highroad
+    pub fld_cty_1_4_enter: bool,
+
+    #[default = false]
+    /// Exit Western Clockbank Highroad
+    pub fld_cty_1_4_exit: bool,
+
+    #[default = false]
+    /// Enter Western Conning Creek Coast
+    pub fld_sea_2_3_enter: bool,
+
+    #[default = false]
+    /// Exit Western Conning Creek Coast
+    pub fld_sea_2_3_exit: bool,
+
+    #[default = false]
+    /// Enter Western Crackridge Wilds
+    pub fld_wld_2_1_enter: bool,
+
+    #[default = false]
+    /// Exit Western Crackridge Wilds
+    pub fld_wld_2_1_exit: bool,
+
+    #[default = false]
+    /// Enter Western Gravell Wilds
+    pub fld_wld_3_2_enter: bool,
+
+    #[default = false]
+    /// Exit Western Gravell Wilds
+    pub fld_wld_3_2_exit: bool,
+
+    #[default = false]
+    /// Enter Western Merry Hills Pass
+    pub fld_mnt_3_2_enter: bool,
+
+    #[default = false]
+    /// Exit Western Merry Hills Pass
+    pub fld_mnt_3_2_exit: bool,
+
+    #[default = false]
+    /// Enter Western Montwise Pass
+    pub fld_mnt_2_1_enter: bool,
+
+    #[default = false]
+    /// Exit Western Montwise Pass
+    pub fld_mnt_2_1_exit: bool,
+
+    #[default = false]
+    /// Enter Western Sai Sands
+    pub fld_dst_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Western Sai Sands
+    pub fld_dst_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Western Tropu'hopu Traverse
+    pub fld_isd_2_1_enter: bool,
+
+    #[default = false]
+    /// Exit Western Tropu'hopu Traverse
+    pub fld_isd_2_1_exit: bool,
+
+    #[default = false]
+    /// Enter Western Winterbloom Snows
+    pub fld_snw_2_2_enter: bool,
+
+    #[default = false]
+    /// Exit Western Winterbloom Snows
+    pub fld_snw_2_2_exit: bool,
+
+    #[default = false]
+    /// Enter Winterbloom
+    pub twn_snw_2_1_a_enter: bool,
+
+    #[default = false]
+    /// Exit Winterbloom
+    pub twn_snw_2_1_a_exit: bool,
+
+    #[default = false]
+    /// Enter Winterbloom: Thieves' Quarter
+    pub twn_snw_2_1_b_enter: bool,
+
+    #[default = false]
+    /// Exit Winterbloom: Thieves' Quarter
+    pub twn_snw_2_1_b_exit: bool,
 }

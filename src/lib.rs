@@ -16,6 +16,8 @@ use asr::{
     Address, Process,
 };
 
+use data::zone;
+
 // mod data;
 // use data::zone::{ADVANCED_JOB_FIGHTS, AREAS, SHRINES};
 
@@ -64,7 +66,13 @@ struct Game {
     settings: Settings,
     loading: Watcher<u16>,
     saving: Watcher<u16>,
+<<<<<<< HEAD
     start: Watcher<u16>,
+=======
+    level_id: Watcher<u16>,
+    start: Watcher<u8>,
+    start_2: Watcher<u16>,
+>>>>>>> 7da7cb8 (level splitting)
     event_index: Watcher<u16>,
     dialog: Watcher<u8>,
 }
@@ -74,7 +82,13 @@ impl Game {
         let game = Self {
             process,
             module,
+<<<<<<< HEAD
             start: Watcher::new(vec![0x51E2190, 0x18, 0x4]),
+=======
+            start: Watcher::new(vec![0x5219628, 0xA8]),
+            start_2: Watcher::new(vec![0x51B1370, 0x8, 0x8, 0x210, 0x210, 0x8, 0x540]),
+            level_id: Watcher::new(vec![0x4F7BBE0, 0x470]),
+>>>>>>> 7da7cb8 (level splitting)
             dialog: Watcher::new(vec![0x5189F00, 0x20, 0xC8, 0x278, 0x10, 0x308]),
             settings: Settings::register(),
             game_state: Watcher::new(vec![0x4F7AB68, 0x234]),
@@ -105,6 +119,11 @@ impl Game {
     fn update_vars(&mut self) -> Option<Vars<'_>> {
         Some(Vars {
             start: self.start.update(&self.process, self.module)?,
+<<<<<<< HEAD
+=======
+            start_2: self.start_2.update(&self.process, self.module)?,
+            level_id: self.level_id.update(&self.process, self.module)?,
+>>>>>>> 7da7cb8 (level splitting)
             dialog: self.dialog.update(&self.process, self.module)?,
             loading: match self.loading.update(&self.process, self.module) {
                 Some(update) => update,
@@ -180,7 +199,13 @@ impl Display for Character {
 
 #[allow(unused)]
 pub struct Vars<'a> {
+<<<<<<< HEAD
     start: &'a Pair<u16>,
+=======
+    start: &'a Pair<u8>,
+    start_2: &'a Pair<u16>,
+    level_id: &'a Pair<u16>,
+>>>>>>> 7da7cb8 (level splitting)
     dialog: &'a Pair<u8>,
     loading: &'a Pair<u16>,
     saving: &'a Pair<u16>,
@@ -270,6 +295,18 @@ pub extern "C" fn update() {
                     if let Some(reason) = should_split(&mut vars) {
                         asr::print_message(&reason);
                         timer::split();
+                    }
+
+                    if vars.level_id.old != vars.level_id.current {
+                        let debug_text = format!("CHANGING ZONES from {} to {}", vars.level_id.old, vars.level_id.current);
+                        asr::print_message(&debug_text);
+                        // trigger enter
+                        if let Some(_split) = zone::Areas::enter_area(&mut vars) {
+                            timer::split();
+                        }
+                        if let Some(_split) = zone::Areas::exit_area(&mut vars) {
+                            timer::split();
+                        }
                     }
 
                     if vars.settings.load_removal {
