@@ -3359,19 +3359,19 @@ pub struct Settings {
     pub fld_atl_3_1_exit: bool,
 
     #[default = false]
-    /// Enter Wandering Wood
+    /// Enter Wandering Wood A
     pub dng_isd_3_1_a_enter: bool,
 
     #[default = false]
-    /// Enter Wandering Wood
+    /// Enter Wandering Wood B
     pub dng_isd_3_1_b_enter: bool,
 
     #[default = false]
-    /// Exit Wandering Wood
+    /// Exit Wandering Wood A
     pub dng_isd_3_1_a_exit: bool,
 
     #[default = false]
-    /// Exit Wandering Wood
+    /// Exit Wandering Wood B
     pub dng_isd_3_1_b_exit: bool,
 
     #[default = false]
