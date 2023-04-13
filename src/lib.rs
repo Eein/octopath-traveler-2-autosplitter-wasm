@@ -69,6 +69,7 @@ struct Game {
     level_id: Watcher<u16>,
     event_index: Watcher<u16>,
     job_license_inventor: Watcher<u16>,
+    job_license_armsmaster: Watcher<u16>,
     job_license_hunter: Watcher<u16>,
     job_license_thief: Watcher<u16>,
     job_license_cleric: Watcher<u16>,
@@ -109,6 +110,7 @@ impl Game {
             agnea_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x690 + 0xEC]),
             agnea_hp: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x690 + 0xC]),
             job_license_inventor: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x24 + 0x8]),
+            job_license_armsmaster: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x3c + 0x8]),
             job_license_hunter: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x30 + 0x4]),
             job_license_thief: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0xc + 0x4]),
             job_license_cleric: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x0 + 0x4]),
@@ -172,6 +174,9 @@ impl Game {
                 .update(&self.process, self.module)?,
             job_license_apothecary: self
                 .job_license_apothecary
+                .update(&self.process, self.module)?,
+            job_license_armsmaster: self
+                .job_license_armsmaster
                 .update(&self.process, self.module)?,
             settings: &self.settings,
             splits: &mut self.splits,
@@ -240,6 +245,7 @@ pub struct Vars<'a> {
     agnea_hp: &'a Pair<u16>,
     event_index: &'a Pair<u16>,
     job_license_inventor: &'a Pair<u16>,
+    job_license_armsmaster: &'a Pair<u16>,
     job_license_hunter: &'a Pair<u16>,
     job_license_thief: &'a Pair<u16>,
     job_license_cleric: &'a Pair<u16>,
@@ -390,6 +396,12 @@ fn should_split(vars: &mut Vars) -> Option<String> {
         return vars.split(
             "job_license_apothecary",
             vars.settings.job_license_apothecary,
+        );
+    }
+    if vars.job_license_armsmaster.old == 0 && vars.job_license_armsmaster.current == 1 {
+        return vars.split(
+            "job_license_armsmaster",
+            vars.settings.job_license_armsmaster,
         );
     }
     if let Some(split) = splits::hikari::HikariSplits::split(vars) {

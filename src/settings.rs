@@ -6,6 +6,9 @@ pub struct Settings {
     /// Job License - Inventor
     pub job_license_inventor: bool,
 
+    /// Job License - Armsmaster
+    pub job_license_armsmaster: bool,
+
     /// Job License - Hunter
     pub job_license_hunter: bool,
 
