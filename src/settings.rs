@@ -27,6 +27,9 @@ pub struct Settings {
     /// Job License - Warrior
     pub job_license_warrior: bool,
 
+    /// Job License - Apothecary
+    pub job_license_apothecary: bool,
+
     /// Throne Main Story Complete (End Single Story)
     pub throne_story_complete: bool,
 
