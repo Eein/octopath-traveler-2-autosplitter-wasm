@@ -36,10 +36,6 @@ Since this autosplitter is in prerelease, you'll need to download the following 
 
 https://github.com/Eein/octopath-traveler-2-autosplitter-wasm/releases/latest/download/octopath_traveler_2_autosplitter_wasm.wasm
 
-### Linux
-
-https://github.com/Eein/octopath-traveler-2-autosplitter-wasm/releases/latest/download/octopath_traveler_2_autosplitter_linux_wasm.wasm
-
 ## build
 1. install rustup + stable rust https://rustup.rs/
 2. install wasm target
