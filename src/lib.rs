@@ -71,6 +71,7 @@ struct Game {
     job_license_inventor: Watcher<u16>,
     job_license_hunter: Watcher<u16>,
     job_license_thief: Watcher<u16>,
+    job_license_cleric: Watcher<u16>,
     dialog: Watcher<u8>,
 }
 
@@ -105,6 +106,7 @@ impl Game {
             job_license_inventor: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x24 + 0x8]), 
             job_license_hunter: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x30 + 0x4]),
             job_license_thief: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0xc + 0x4]),
+            job_license_cleric: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x0 + 0x4]),
             event_index: Watcher::new(vec![0x4F7B1E0, 0x298]),
             splits: HashSet::new(),
         };
@@ -147,6 +149,7 @@ impl Game {
                 .update(&self.process, self.module)?,
             job_license_hunter: self.job_license_hunter.update(&self.process, self.module)?,
             job_license_thief: self.job_license_thief.update(&self.process, self.module)?,
+            job_license_cleric: self.job_license_cleric.update(&self.process, self.module)?,
             settings: &self.settings,
             splits: &mut self.splits,
         })
@@ -216,6 +219,7 @@ pub struct Vars<'a> {
     job_license_inventor: &'a Pair<u16>,
     job_license_hunter: &'a Pair<u16>,
     job_license_thief: &'a Pair<u16>,
+    job_license_cleric: &'a Pair<u16>,
     settings: &'a Settings,
     splits: &'a mut HashSet<String>,
 }
