@@ -1,7 +1,10 @@
 #[derive(asr::Settings, Clone)]
 pub struct Settings {
-    /// Load/Autosave Remover
+    /// ALPHA: Very Bad Load/Autosave Remover
     pub load_removal: bool,
+
+    /// Automatically Start Timer on Character Select
+    pub start: bool,
 
     /// Job License - Inventor
     pub job_license_inventor: bool,

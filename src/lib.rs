@@ -350,7 +350,10 @@ pub extern "C" fn update() {
                 TimerState::NotRunning => {
                     vars.clear_splits();
 
-                    if vars.game_state.current == 1 && vars.start.old < vars.start.current {
+                    if settings.start
+                        && vars.game_state.current == 1
+                        && vars.start.old < vars.start.current
+                    {
                         timer::start()
                     }
                 }
