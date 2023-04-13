@@ -1,4 +1,4 @@
-#[derive(asr::Settings)]
+#[derive(asr::Settings, Clone)]
 pub struct Settings {
     /// Load/Autosave Remover
     pub load_removal: bool,

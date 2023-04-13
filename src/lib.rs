@@ -20,7 +20,15 @@ use data::zone;
 // mod data;
 // use data::zone::{ADVANCED_JOB_FIGHTS, AREAS, SHRINES};
 
-static STATE: Spinlock<State> = const_spinlock(State { game: None });
+static STATE: Spinlock<State> = const_spinlock(State {
+    game: None,
+    settings: None,
+});
+
+pub struct State {
+    game: Option<Game>,
+    settings: Option<Settings>,
+}
 
 struct Watcher<T> {
     watcher: asr::watcher::Watcher<T>,
@@ -195,10 +203,6 @@ impl Game {
     }
 }
 
-pub struct State {
-    game: Option<Game>,
-}
-
 // This enum maps to the SavePlayerCharacterData
 #[derive(Default, PartialEq)]
 pub enum Character {
@@ -296,6 +300,13 @@ pub struct Splits(HashSet<String>);
 #[no_mangle]
 pub extern "C" fn update() {
     let mut state = STATE.lock();
+    if state.settings.is_none() {
+        state.settings = Some(Settings::register());
+        return;
+    }
+
+    let settings = state.settings.clone().unwrap();
+
     if state.game.is_none() {
         match Process::attach("Octopath_Travel") {
             Some(process) => {
@@ -344,7 +355,7 @@ pub extern "C" fn update() {
                     }
                 }
                 TimerState::Running => {
-                    if let Some(reason) = should_split(&mut vars) {
+                    if let Some(reason) = should_split(&mut vars, &settings) {
                         asr::print_message(&reason);
                         timer::split();
                     }
@@ -353,15 +364,15 @@ pub extern "C" fn update() {
                         // let debug_text = format!("CHANGING ZONES from {} to {}", vars.level_id.old, vars.level_id.current);
                         // asr::print_message(&debug_text);
                         // trigger enter
-                        if let Some(_split) = zone::Areas::enter_area(&mut vars) {
+                        if let Some(_split) = zone::Areas::enter_area(&mut vars, &settings) {
                             timer::split();
                         }
-                        if let Some(_split) = zone::Areas::exit_area(&mut vars) {
+                        if let Some(_split) = zone::Areas::exit_area(&mut vars, &settings) {
                             timer::split();
                         }
                     }
 
-                    if vars.settings.load_removal {
+                    if settings.load_removal {
                         // load/save removal
                         if vars.loading.current == 0 && vars.saving.old > vars.saving.current {
                             timer::resume_game_time()
@@ -380,71 +391,65 @@ pub extern "C" fn update() {
     }
 }
 
-fn should_split(vars: &mut Vars) -> Option<String> {
+fn should_split(vars: &mut Vars, settings: &Settings) -> Option<String> {
     if vars.job_license_inventor.old == 0 && vars.job_license_inventor.current == 1 {
-        return vars.split("job_license_inventor", vars.settings.job_license_inventor);
+        return vars.split("job_license_inventor", settings.job_license_inventor);
     }
     if vars.job_license_hunter.old == 0 && vars.job_license_hunter.current == 1 {
-        return vars.split("job_license_hunter", vars.settings.job_license_hunter);
+        return vars.split("job_license_hunter", settings.job_license_hunter);
     }
     if vars.job_license_thief.old == 0 && vars.job_license_thief.current == 1 {
-        return vars.split("job_license_thief", vars.settings.job_license_thief);
+        return vars.split("job_license_thief", settings.job_license_thief);
     }
     if vars.job_license_cleric.old == 0 && vars.job_license_cleric.current == 1 {
-        return vars.split("job_license_cleric", vars.settings.job_license_cleric);
+        return vars.split("job_license_cleric", settings.job_license_cleric);
     }
     if vars.job_license_scholar.old == 0 && vars.job_license_scholar.current == 1 {
-        return vars.split("job_license_scholar", vars.settings.job_license_scholar);
+        return vars.split("job_license_scholar", settings.job_license_scholar);
     }
     if vars.job_license_merchant.old == 0 && vars.job_license_merchant.current == 1 {
-        return vars.split("job_license_merchant", vars.settings.job_license_merchant);
+        return vars.split("job_license_merchant", settings.job_license_merchant);
     }
     if vars.job_license_dancer.old == 0 && vars.job_license_dancer.current == 1 {
-        return vars.split("job_license_dancer", vars.settings.job_license_dancer);
+        return vars.split("job_license_dancer", settings.job_license_dancer);
     }
     if vars.job_license_warrior.old == 0 && vars.job_license_warrior.current == 1 {
-        return vars.split("job_license_warrior", vars.settings.job_license_warrior);
+        return vars.split("job_license_warrior", settings.job_license_warrior);
     }
     if vars.job_license_apothecary.old == 0 && vars.job_license_apothecary.current == 1 {
-        return vars.split(
-            "job_license_apothecary",
-            vars.settings.job_license_apothecary,
-        );
+        return vars.split("job_license_apothecary", settings.job_license_apothecary);
     }
     if vars.job_license_armsmaster.old == 0 && vars.job_license_armsmaster.current == 1 {
-        return vars.split(
-            "job_license_armsmaster",
-            vars.settings.job_license_armsmaster,
-        );
+        return vars.split("job_license_armsmaster", settings.job_license_armsmaster);
     }
     if vars.job_license_arcanist.old == 2 && vars.job_license_arcanist.current == 18 {
-        return vars.split("job_license_arcanist", vars.settings.job_license_arcanist);
+        return vars.split("job_license_arcanist", settings.job_license_arcanist);
     }
     if vars.job_license_conjurer.old == 0 && vars.job_license_conjurer.current == 64 {
-        return vars.split("job_license_conjurer", vars.settings.job_license_conjurer);
+        return vars.split("job_license_conjurer", settings.job_license_conjurer);
     }
-    if let Some(split) = splits::hikari::HikariSplits::split(vars) {
+    if let Some(split) = splits::hikari::HikariSplits::split(vars, &settings) {
         return Some(split);
     }
-    if let Some(split) = splits::castti::CasttiSplits::split(vars) {
+    if let Some(split) = splits::castti::CasttiSplits::split(vars, &settings) {
         return Some(split);
     }
-    if let Some(split) = splits::agnea::AgneaSplits::split(vars) {
+    if let Some(split) = splits::agnea::AgneaSplits::split(vars, &settings) {
         return Some(split);
     }
-    if let Some(split) = splits::ochette::OchetteSplits::split(vars) {
+    if let Some(split) = splits::ochette::OchetteSplits::split(vars, &settings) {
         return Some(split);
     }
-    if let Some(split) = splits::osvald::OsvaldSplits::split(vars) {
+    if let Some(split) = splits::osvald::OsvaldSplits::split(vars, &settings) {
         return Some(split);
     }
-    if let Some(split) = splits::partitio::PartitioSplits::split(vars) {
+    if let Some(split) = splits::partitio::PartitioSplits::split(vars, &settings) {
         return Some(split);
     }
-    if let Some(split) = splits::temenos::TemenosSplits::split(vars) {
+    if let Some(split) = splits::temenos::TemenosSplits::split(vars, &settings) {
         return Some(split);
     }
-    if let Some(split) = splits::throne::ThroneSplits::split(vars) {
+    if let Some(split) = splits::throne::ThroneSplits::split(vars, &settings) {
         return Some(split);
     }
 
