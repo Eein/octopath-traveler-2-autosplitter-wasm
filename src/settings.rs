@@ -9,6 +9,9 @@ pub struct Settings {
     /// Job License - Hunter
     pub job_license_hunter: bool,
 
+    /// Job License - Thief
+    pub job_license_thief: bool,
+
     /// Throne Main Story Complete (End Single Story)
     pub throne_story_complete: bool,
 

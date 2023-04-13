@@ -70,6 +70,7 @@ struct Game {
     event_index: Watcher<u16>,
     job_license_inventor: Watcher<u16>,
     job_license_hunter: Watcher<u16>,
+    job_license_thief: Watcher<u16>,
     dialog: Watcher<u8>,
 }
 
@@ -103,6 +104,7 @@ impl Game {
             agnea_hp: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x690 + 0xC]),
             job_license_inventor: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x24 + 0x8]), 
             job_license_hunter: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x30 + 0x4]),
+            job_license_thief: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0xc + 0x4]),
             event_index: Watcher::new(vec![0x4F7B1E0, 0x298]),
             splits: HashSet::new(),
         };
@@ -144,6 +146,7 @@ impl Game {
                 .job_license_inventor
                 .update(&self.process, self.module)?,
             job_license_hunter: self.job_license_hunter.update(&self.process, self.module)?,
+            job_license_thief: self.job_license_thief.update(&self.process, self.module)?,
             settings: &self.settings,
             splits: &mut self.splits,
         })
@@ -212,6 +215,7 @@ pub struct Vars<'a> {
     event_index: &'a Pair<u16>,
     job_license_inventor: &'a Pair<u16>,
     job_license_hunter: &'a Pair<u16>,
+    job_license_thief: &'a Pair<u16>,
     settings: &'a Settings,
     splits: &'a mut HashSet<String>,
 }
@@ -331,6 +335,9 @@ fn should_split(vars: &mut Vars) -> Option<String> {
     }
     if vars.job_license_hunter.old == 0 && vars.job_license_hunter.current == 1 {
         return vars.split("job_license_hunter", vars.settings.job_license_hunter);
+    }
+    if vars.job_license_thief.old == 0 && vars.job_license_thief.current == 1 {
+        return vars.split("job_license_thief", vars.settings.job_license_thief);
     }
     if let Some(split) = splits::hikari::HikariSplits::split(vars) {
         return Some(split);
