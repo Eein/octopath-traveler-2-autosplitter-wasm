@@ -18,6 +18,9 @@ pub struct Settings {
     /// Job License - Scholar
     pub job_license_scholar: bool,
 
+    /// Job License - Merchant
+    pub job_license_merchant: bool,
+
     /// Throne Main Story Complete (End Single Story)
     pub throne_story_complete: bool,
 

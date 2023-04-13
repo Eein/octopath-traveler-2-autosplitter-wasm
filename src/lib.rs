@@ -73,6 +73,7 @@ struct Game {
     job_license_thief: Watcher<u16>,
     job_license_cleric: Watcher<u16>,
     job_license_scholar: Watcher<u16>,
+    job_license_merchant: Watcher<u16>,
     dialog: Watcher<u8>,
 }
 
@@ -109,6 +110,7 @@ impl Game {
             job_license_thief: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0xc + 0x4]),
             job_license_cleric: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x0 + 0x4]),
             job_license_scholar: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x18 + 0x4]),
+            job_license_merchant: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x54 + 0x4]),
             event_index: Watcher::new(vec![0x4F7B1E0, 0x298]),
             splits: HashSet::new(),
         };
@@ -154,6 +156,9 @@ impl Game {
             job_license_cleric: self.job_license_cleric.update(&self.process, self.module)?,
             job_license_scholar: self
                 .job_license_scholar
+                .update(&self.process, self.module)?,
+            job_license_merchant: self
+                .job_license_merchant
                 .update(&self.process, self.module)?,
             settings: &self.settings,
             splits: &mut self.splits,
@@ -226,6 +231,7 @@ pub struct Vars<'a> {
     job_license_thief: &'a Pair<u16>,
     job_license_cleric: &'a Pair<u16>,
     job_license_scholar: &'a Pair<u16>,
+    job_license_merchant: &'a Pair<u16>,
     settings: &'a Settings,
     splits: &'a mut HashSet<String>,
 }
@@ -348,6 +354,15 @@ fn should_split(vars: &mut Vars) -> Option<String> {
     }
     if vars.job_license_thief.old == 0 && vars.job_license_thief.current == 1 {
         return vars.split("job_license_thief", vars.settings.job_license_thief);
+    }
+    if vars.job_license_cleric.old == 0 && vars.job_license_cleric.current == 1 {
+        return vars.split("job_license_cleric", vars.settings.job_license_cleric);
+    }
+    if vars.job_license_scholar.old == 0 && vars.job_license_scholar.current == 1 {
+        return vars.split("job_license_scholar", vars.settings.job_license_scholar);
+    }
+    if vars.job_license_merchant.old == 0 && vars.job_license_merchant.current == 1 {
+        return vars.split("job_license_merchant", vars.settings.job_license_merchant);
     }
     if let Some(split) = splits::hikari::HikariSplits::split(vars) {
         return Some(split);
