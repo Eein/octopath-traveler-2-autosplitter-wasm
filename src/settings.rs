@@ -24,6 +24,9 @@ pub struct Settings {
     /// Job License - Dancer
     pub job_license_dancer: bool,
 
+    /// Job License - Warrior
+    pub job_license_warrior: bool,
+
     /// Throne Main Story Complete (End Single Story)
     pub throne_story_complete: bool,
 
