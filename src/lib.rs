@@ -69,6 +69,7 @@ struct Game {
     level_id: Watcher<u16>,
     event_index: Watcher<u16>,
     job_license_inventor: Watcher<u16>,
+    job_license_hunter: Watcher<u16>,
     dialog: Watcher<u8>,
 }
 
@@ -100,7 +101,8 @@ impl Game {
             throne_hp: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x5A0 + 0xC]),
             agnea_progress: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x690 + 0xEC]),
             agnea_hp: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x708, 0x690 + 0xC]),
-            job_license_inventor: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x24 + 0x8]),
+            job_license_inventor: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x24 + 0x8]), 
+            job_license_hunter: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x30 + 0x4]),
             event_index: Watcher::new(vec![0x4F7B1E0, 0x298]),
             splits: HashSet::new(),
         };
@@ -141,6 +143,7 @@ impl Game {
             job_license_inventor: self
                 .job_license_inventor
                 .update(&self.process, self.module)?,
+            job_license_hunter: self.job_license_hunter.update(&self.process, self.module)?,
             settings: &self.settings,
             splits: &mut self.splits,
         })
@@ -208,6 +211,7 @@ pub struct Vars<'a> {
     agnea_hp: &'a Pair<u16>,
     event_index: &'a Pair<u16>,
     job_license_inventor: &'a Pair<u16>,
+    job_license_hunter: &'a Pair<u16>,
     settings: &'a Settings,
     splits: &'a mut HashSet<String>,
 }
@@ -324,6 +328,9 @@ pub extern "C" fn update() {
 fn should_split(vars: &mut Vars) -> Option<String> {
     if vars.job_license_inventor.old == 0 && vars.job_license_inventor.current == 1 {
         return vars.split("job_license_inventor", vars.settings.job_license_inventor);
+    }
+    if vars.job_license_hunter.old == 0 && vars.job_license_hunter.current == 1 {
+        return vars.split("job_license_hunter", vars.settings.job_license_hunter);
     }
     if let Some(split) = splits::hikari::HikariSplits::split(vars) {
         return Some(split);

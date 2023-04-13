@@ -6,6 +6,9 @@ pub struct Settings {
     /// Job License - Inventor
     pub job_license_inventor: bool,
 
+    /// Job License - Hunter
+    pub job_license_hunter: bool,
+
     /// Throne Main Story Complete (End Single Story)
     pub throne_story_complete: bool,
 
