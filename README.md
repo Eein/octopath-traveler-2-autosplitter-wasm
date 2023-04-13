@@ -7,7 +7,10 @@ A Windows and Linux autosplitter for Octopath Traveler 2
 # TODO:
 
 - [x] Character Splits
-- [x] Ending splits
+- [ ] Ending splits
+    - [ ] final boss
+    - [ ] superboss
+    - [ ] find and add ending story chapter stuff
 - [x] Character Joins
 - [x] Enter/Exit Zone
 - [x] Get Job License
