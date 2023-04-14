@@ -12,6 +12,9 @@ pub struct Settings {
     /// Job License - Arcanist
     pub job_license_arcanist: bool,
 
+    /// Job License - Conjurer
+    pub job_license_conjurer: bool,
+
     /// Job License - Hunter
     pub job_license_hunter: bool,
 

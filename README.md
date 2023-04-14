@@ -10,11 +10,9 @@ A Windows and Linux autosplitter for Octopath Traveler 2
 - [x] Ending splits
 - [x] Character Joins
 - [x] Enter/Exit Zone
-- [-] Get Job License
-  - Missing Arcanist (stored behind bitflag)
-  - Inventor doesn't split on license get, but after dialog (visited) - also has bitflag
-  - Armsmaster doesn't split on license get, but after dialog (visited) - also has bitflag
-  - Conjurer behind bitflag?
+- [x] Get Job License
+  - Advanced Jobs do not split until after initial dialog is complete - this is due to the only flags being set are bitflags - another alternative which is very non-performant would be to scan the inventory, not really inclinded to do that to avoid being unusable on older machines
+
 - [ ] Get Shrine
 - [x] Chapter Ends on Frame - uses cue card json
 - [x] Load/AutoSave Removal
