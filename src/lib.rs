@@ -304,7 +304,7 @@ pub extern "C" fn update() {
     let settings = state.settings.clone().unwrap();
 
     if state.game.is_none() {
-        match Process::attach("Octopath_Travel") {
+        match Process::attach("Octopath_Traveler2") {
             Some(process) => {
                 match process.get_module_address("Octopath_Traveler2-Win64-Shipping.exe") {
                     Ok(Address(module)) => {
@@ -320,7 +320,7 @@ pub extern "C" fn update() {
     }
 
     if state.game.is_none() {
-        match Process::attach("Octopath_Traveler2") {
+        match Process::attach("Octopath_Travel") {
             Some(process) => {
                 match process.get_module_address("Octopath_Traveler2-Win64-Shipping.exe") {
                     Ok(Address(module)) => {
