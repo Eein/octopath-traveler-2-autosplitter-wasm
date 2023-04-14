@@ -70,7 +70,6 @@ struct Game {
     throne_hp: Watcher<u16>,
     agnea_progress: Watcher<u16>,
     agnea_hp: Watcher<u16>,
-    settings: Settings,
     loading: Watcher<u16>,
     saving: Watcher<u16>,
     start: Watcher<u16>,
@@ -99,7 +98,6 @@ impl Game {
             start: Watcher::new(vec![0x51E2190, 0x18, 0x4]),
             level_id: Watcher::new(vec![0x4F7BBE0, 0x470]),
             dialog: Watcher::new(vec![0x5189F00, 0x20, 0xC8, 0x278, 0x10, 0x308]),
-            settings: Settings::register(),
             game_state: Watcher::new(vec![0x4F7AB68, 0x234]),
             loading: Watcher::new(vec![0x4F7CDD8, 0x308, 0x2C0]),
             saving: Watcher::new(vec![0x4F7CDD8, 0x310, 0x280, 0x0c]),
@@ -197,7 +195,6 @@ impl Game {
             job_license_conjurer: self
                 .job_license_conjurer
                 .update(&self.process, self.module)?,
-            settings: &self.settings,
             splits: &mut self.splits,
         })
     }
@@ -271,7 +268,6 @@ pub struct Vars<'a> {
     job_license_dancer: &'a Pair<u16>,
     job_license_warrior: &'a Pair<u16>,
     job_license_apothecary: &'a Pair<u16>,
-    settings: &'a Settings,
     splits: &'a mut HashSet<String>,
 }
 
