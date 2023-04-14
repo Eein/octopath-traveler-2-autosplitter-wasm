@@ -1152,7 +1152,7 @@ pub struct Settings {
     /// Castti 1 - Unsanitary Beasts
     pub castti_140: bool,
 
-    /// Castti 1 - Purifying the Waters (Veron + Doron)
+    /// Castti 1 - Purifying the Waters (Kill Veron + Doron)
     pub castti_150: bool,
 
     /// Castti 1 - A Warm Welcome
@@ -1200,7 +1200,7 @@ pub struct Settings {
     /// Castti 2A - Finding the Sand Lion
     pub castti_610: bool,
 
-    /// Castti 2A - Dealing with the Sand Lion
+    /// Castti 2A - Dealing with the Sand Lion (Kill Sandlion)
     pub castti_620: bool,
 
     /// Castti 2A - Accord
@@ -1248,7 +1248,7 @@ pub struct Settings {
     /// Castti 2B - Greg's Ambitions
     pub castti_1110: bool,
 
-    /// Castti 2B - Rogue Conflict
+    /// Castti 2B - Rogue Conflict (Kill Plukk)
     pub castti_1120: bool,
 
     /// Castti 2B - Twelfth Birthday
@@ -1338,7 +1338,7 @@ pub struct Settings {
     /// Castti 4 - To Extend a Helping Hand
     pub castti_2060: bool,
 
-    /// Castti 4 - Concocting a Cure
+    /// Castti 4 - Concocting a Cure (Kill Trosseau)
     pub castti_2070: bool,
 
     /// Castti 4 - Miracle Cure
