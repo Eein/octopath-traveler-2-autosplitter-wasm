@@ -78,6 +78,7 @@ struct Game {
     job_license_dancer: Watcher<u16>,
     job_license_warrior: Watcher<u16>,
     job_license_apothecary: Watcher<u16>,
+    job_license_arcanist: Watcher<u16>,
     dialog: Watcher<u8>,
 }
 
@@ -119,6 +120,7 @@ impl Game {
             job_license_dancer: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x6c + 0x4]),
             job_license_warrior: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x60 + 0x4]),
             job_license_apothecary: Watcher::new(vec![0x4F7AB30, 0x2D8, 0xB88, 0x48 + 0x4]),
+            job_license_arcanist: Watcher::new(vec![0x4F7AB30, 0x2D8, 0x28, 0x120 + 0xe]),
             event_index: Watcher::new(vec![0x4F7B1E0, 0x298]),
             splits: HashSet::new(),
         };
@@ -177,6 +179,9 @@ impl Game {
                 .update(&self.process, self.module)?,
             job_license_armsmaster: self
                 .job_license_armsmaster
+                .update(&self.process, self.module)?,
+            job_license_arcanist: self
+                .job_license_arcanist
                 .update(&self.process, self.module)?,
             settings: &self.settings,
             splits: &mut self.splits,
@@ -246,6 +251,7 @@ pub struct Vars<'a> {
     event_index: &'a Pair<u16>,
     job_license_inventor: &'a Pair<u16>,
     job_license_armsmaster: &'a Pair<u16>,
+    job_license_arcanist: &'a Pair<u16>,
     job_license_hunter: &'a Pair<u16>,
     job_license_thief: &'a Pair<u16>,
     job_license_cleric: &'a Pair<u16>,
@@ -403,6 +409,9 @@ fn should_split(vars: &mut Vars) -> Option<String> {
             "job_license_armsmaster",
             vars.settings.job_license_armsmaster,
         );
+    }
+    if vars.job_license_arcanist.old == 2 && vars.job_license_arcanist.current == 18 {
+        return vars.split("job_license_arcanist", vars.settings.job_license_arcanist);
     }
     if let Some(split) = splits::hikari::HikariSplits::split(vars) {
         return Some(split);

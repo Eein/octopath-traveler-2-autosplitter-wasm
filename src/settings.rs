@@ -9,6 +9,9 @@ pub struct Settings {
     /// Job License - Armsmaster
     pub job_license_armsmaster: bool,
 
+    /// Job License - Arcanist
+    pub job_license_arcanist: bool,
+
     /// Job License - Hunter
     pub job_license_hunter: bool,
 
