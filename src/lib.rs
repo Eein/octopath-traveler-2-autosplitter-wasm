@@ -72,7 +72,8 @@ struct Game {
     agnea_hp: Watcher<u16>,
     loading: Watcher<u16>,
     saving: Watcher<u16>,
-    start: Watcher<u16>,
+    start: Watcher<u8>,
+    start2: Watcher<u8>,
     level_id: Watcher<u16>,
     event_index: Watcher<u16>,
     job_license_inventor: Watcher<u16>,
@@ -96,6 +97,7 @@ impl Game {
             process,
             module,
             start: Watcher::new(vec![0x51E2190, 0x18, 0x4]),
+            start2: Watcher::new(vec![0x51E2190, 0x18, 0x6]),
             level_id: Watcher::new(vec![0x4F7BBE0, 0x470]),
             dialog: Watcher::new(vec![0x5189F00, 0x20, 0xC8, 0x278, 0x10, 0x308]),
             game_state: Watcher::new(vec![0x4F7AB68, 0x234]),
@@ -137,12 +139,13 @@ impl Game {
     }
 
     fn reset_splits(&mut self) {
-        self.splits.clear()
+        self.splits = HashSet::new();
     }
 
     fn update_vars(&mut self) -> Option<Vars<'_>> {
         Some(Vars {
             start: self.start.update(&self.process, self.module)?,
+            start2: self.start2.update(&self.process, self.module)?,
             level_id: self.level_id.update(&self.process, self.module)?,
             dialog: self.dialog.update(&self.process, self.module)?,
             loading: match self.loading.update(&self.process, self.module) {
@@ -237,7 +240,8 @@ impl Display for Character {
 
 #[allow(unused)]
 pub struct Vars<'a> {
-    start: &'a Pair<u16>,
+    start: &'a Pair<u8>,
+    start2: &'a Pair<u8>,
     level_id: &'a Pair<u16>,
     dialog: &'a Pair<u8>,
     loading: &'a Pair<u16>,
@@ -341,21 +345,17 @@ pub extern "C" fn update() {
             state.game = None;
             return;
         }
-        match timer::state() {
-            TimerState::NotRunning => {
-                game.reset_splits();
-            }
-            _ => (),
-        }
 
         if let Some(mut vars) = game.update_vars() {
             match timer::state() {
                 TimerState::NotRunning => {
                     if settings.start
                         && vars.game_state.current == 1
-                        && vars.start.old < vars.start.current
+                        && ((vars.start.old == 0 && vars.start.current == 1) || (vars.start2.old == 0 && vars.start2.current == 1))
                     {
-                        timer::start()
+                        asr::print_message("WE SHOULD BE STARTING RIGHT NOW");
+                        game.reset_splits();
+                        timer::start();
                     }
                 }
                 TimerState::Running => {
