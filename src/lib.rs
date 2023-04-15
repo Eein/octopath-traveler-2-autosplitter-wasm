@@ -136,6 +136,10 @@ impl Game {
         Some(game)
     }
 
+    fn reset_splits(&mut self) {
+        self.splits.clear()
+    }
+
     fn update_vars(&mut self) -> Option<Vars<'_>> {
         Some(Vars {
             start: self.start.update(&self.process, self.module)?,
@@ -286,9 +290,6 @@ impl Vars<'_> {
 
         None
     }
-    fn clear_splits(&mut self) {
-        self.splits.clear()
-    }
 }
 
 pub struct Splits(HashSet<String>);
@@ -340,12 +341,16 @@ pub extern "C" fn update() {
             state.game = None;
             return;
         }
+        match timer::state() {
+            TimerState::NotRunning => {
+                game.reset_splits();
+            }
+            _ => (),
+        }
 
         if let Some(mut vars) = game.update_vars() {
             match timer::state() {
                 TimerState::NotRunning => {
-                    vars.clear_splits();
-
                     if settings.start
                         && vars.game_state.current == 1
                         && vars.start.old < vars.start.current
