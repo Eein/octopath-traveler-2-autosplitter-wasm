@@ -4,6 +4,12 @@ A Windows and Linux autosplitter for Octopath Traveler 2
 
 (May work on mac if someone asks for it)
 
+# IMPORTANT
+
+Currently the auto-start setting is only reliable when first opening the game as i'm still hunting the arbitrary values I can use to make this a bit better.
+
+I would recommend either restarting the game between runs if you'd like to use this feature, or start the timer manually. All other settings are 100% reliable.
+
 # TODO:
 
 - [x] Character Splits
