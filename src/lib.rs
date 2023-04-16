@@ -359,9 +359,9 @@ pub extern "C" fn update() {
                 TimerState::NotRunning => {
                     if settings.start
                     && vars.game_state.current == 1
-                    //     && ((vars.start.old == 0 && vars.start.current == 1) || (vars.start2.old == 0 && vars.start2.current == 1))
-                    // {
-                    && vars.alt_start.current == 1 && vars.alt_start2.old == 0 && vars.alt_start2.current > 0 {
+                        && ((vars.start.old == 0 && vars.start.current == 1) || (vars.start2.old == 0 && vars.start2.current == 1))
+                    {
+                    // && vars.alt_start.current == 1 && vars.alt_start2.old == 0 && vars.alt_start2.current > 0 {
                         game.reset_splits();
                         timer::start();
                     }
